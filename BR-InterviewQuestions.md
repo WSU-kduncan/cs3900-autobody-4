@@ -15,3 +15,11 @@
 > Q: What information about the service order do you need in order to complete the service task?
 
 > Q: What car brands does your shop work on?
+
+## Ashu's Questions
+
+> Q: How do you manage scheduling appointments for services currently? 
+
+> Q: How do the technicians know what they are working on a given day?
+
+> Q: Do you only do call in pre booked appointments or walk-ins too?
