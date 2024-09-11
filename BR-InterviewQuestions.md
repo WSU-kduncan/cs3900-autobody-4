@@ -23,3 +23,5 @@
 > Q: How do the technicians know what they are working on a given day?
 
 > Q: Do you only do call in pre booked appointments or walk-ins too?
+>
+> Tommy's feedback on the questions of all team members: Overall I really like the question you are asking, I would consider making it more specific to an actual occurrence vs the general questions you currently have. As an example for Ashu's first question: "Can you tell me about the last service appointment that was scheduled?" With that answer you will get actual answers on what happened, not what should have happened. The answer can be very different when people are for example now following a set procedure or deviating from the procedure.
