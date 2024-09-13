@@ -14,9 +14,14 @@ Ben is eager to try a new way of not only managing his service orders but his me
 
 ### Objectives
 
-1. Allow mechanics to keep track of the work orders assigned to them
-2. Create a way to assign a mechanic based on the make they are certified to work on
-3. Build a user friendly interface that is very simple to use. 
+The mission of ShopFlow Pro is to "Provide a simple and effective way to manage their service orders"
+
+The target customers for the ShopFlow application are small autoshops (0-10 employees) that are currently not using a service order management system.
+
+The goals for ShopFlow Pro are:
+- A 30% reduction of time spent on managing service orders manually
+- 95% of users can set up their service orders and assign technicians without formal training
+- 25% reduction in errors due to oranization in the workorders
 ### Assumptions
 
 ***
