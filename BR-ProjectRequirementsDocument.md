@@ -14,8 +14,9 @@ Ben is eager to try a new way of not only managing his service orders but his me
 
 ### Objectives
 
-***
-
+1. Allow mechanics to keep track of the work orders assigned to them
+2. Create a way to assign a mechanic based on the make they are certified to work on
+3. Build a user friendly interface that is very simple to use. 
 ### Assumptions
 
 ***
