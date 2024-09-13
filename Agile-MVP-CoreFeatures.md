@@ -1,16 +1,14 @@
 # MVP \- Define Core Features
 
-Team Name:  
-Team Members:  
-Project Name:
+Team Name: Auotbody  
+Team Members: Dylan, Owen, Ashu  
+Project Name: ShopFlow Pro
 
 ## Key Features
 
 > List the essential features that will be included in MVP.  
 
-Your text starts here
-
-***
+- Create and update service order
 
 ## User Flow
 
