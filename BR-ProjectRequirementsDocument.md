@@ -24,7 +24,13 @@ The goals for ShopFlow Pro are:
 - 25% reduction in errors due to oranization in the workorders
 ### Assumptions
 
-***
+The following bullet points are assumptions made while creating this document:
+
+- We know all the issues we need to resolve, when creating this application.
+
+- We will have the man hours and workers to complete this application in a timely manner alongside the knowledge to create this project.
+
+- We will have the funds to properly fund this project to the fullest, outsourcing any tools or libraries needed.
 
 ### Requirements
 
