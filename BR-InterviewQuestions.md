@@ -18,7 +18,7 @@
 
 ## Ashu's Questions
 
-> Q: How do you manage scheduling appointments for services currently? 
+> Q: Can you tell me about the last service appointment that was scheduled? 
 
 > Q: How do the technicians know what they are working on a given day?
 
