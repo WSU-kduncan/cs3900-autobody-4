@@ -44,8 +44,6 @@ Project Name: ShopFlow Pro
 
 ## Risks and Mitigations
 
-> Identify potential risks associated with MVP development and launch.
-
 - One potential risk is having too many features and going out of scope for this application which would overcomplicate things and delay the release.
 
 - Focusing on the speed of completion rather than the quality, leaving for problems in the future.
@@ -53,7 +51,7 @@ Project Name: ShopFlow Pro
 - The MVP may lack in some features, leaving the customer without features to properly run their business.
  
 
-> Suggest strategies for mitigating these risks.
+#### Mitigations
 
 - Keep things simple and within the scope of the project, whether that be double checking MVP and going over things with your team.
 
