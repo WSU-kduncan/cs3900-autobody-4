@@ -6,8 +6,6 @@ Project Name: ShopFlow Pro
 
 ## Key Features
 
-> List the essential features that will be included in MVP.  
-
 ### Service Orders
 
 - Create and update service order.
