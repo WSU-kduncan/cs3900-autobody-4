@@ -37,9 +37,13 @@ Project Name: ShopFlow Pro
 
 ## User Stories
 
-> Break down each key feature into user stories.
-
-***
+- As a mechanic, I would like a way to create and update service order.
+  
+- As a user, I would like to be able to assign mechanics to a service order based on the mechanic ID
+  
+- As a mechanic, I would like a way to view service orders and see their details
+ 
+- As a user, I would like to view the customer and vehicle information.
 
 ## Risks and Mitigations
 
