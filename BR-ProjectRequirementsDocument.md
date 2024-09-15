@@ -56,7 +56,11 @@ Outside the scope of this project
 
 ### Performance
 
-***
+The following performance metrics:
+
+- The application loads within 4 seconds
+- The time it takes to load from page to page should be less than 1 second.
+- Database queries should retrieve results within 2 seconds.
 
 ### Open Questions
 
