@@ -32,9 +32,8 @@ Project Name: ShopFlow Pro
 
 ## User Flow
 
-> Create a simple user flow diagram to illustrate how users will navigate through MVP.
-
- ***
+- Flow Diagram: ([FlowDIagram](https://github.com/user-attachments/assets/b0bbdc69-b389-42eb-a125-55b178b180ef)
+)
 
 ## User Stories
 
