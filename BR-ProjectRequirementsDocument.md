@@ -34,7 +34,29 @@ The following bullet points are assumptions made while creating this document:
 
 ### Requirements
 
-***
+- The shop owner has the ability to create a service order. The following bullets will be included on that service order.
+	- Customer name
+	- Date Received
+	- Date completed
+	- Cost
+	- Customer's vehicles vin
+	- Service information
+	- Service code
+	- Assign a mechanic to the service orders work
+	- Vehicle make, model, and year.
+
+- The customer will be able include the following in a service order.
+	- Add their namme
+	- Include description of service
+	- Their vehicles model
+	- Their vehicles make
+	- Their vehicles year	
+	- Their vehciles vin number
+
+- Mechanics will be able to do the following
+	- See the service they are assigned to
+	- Add parts that were used in service
+	- Update cost
 
 ### Scope
 
