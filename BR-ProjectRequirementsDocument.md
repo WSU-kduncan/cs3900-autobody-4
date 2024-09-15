@@ -38,7 +38,21 @@ The following bullet points are assumptions made while creating this document:
 
 ### Scope
 
-***
+The scope of this project includes:
+
+- Database creation using MariaDB
+- All frontend development using Angular
+- Backend developement, connecting the frontend to the database using JAVA.
+
+Outside the scope of this project
+
+- Collecting or documenting payments from customers
+- Documenting payments to the mechanics
+- Any communication between the mechanics, customers, suppliers, etc.
+- Creating financial documents such as income statements, profit/loss statement, balance sheets, income statements, etc.
+- Managing inventory keeping track of what is in stock at the autoshop
+- Documenting which mechanics are working at any given time
+- Creating time estimates, how long a service takes to complete
 
 ### Performance
 
