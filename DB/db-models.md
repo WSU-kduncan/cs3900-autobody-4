@@ -4,7 +4,7 @@
 
 # Logical Model
 
-![Logical Model]()
+![Logical Model](https://github.com/WSU-kduncan/cs3900-autobody-4/blob/main/DB%2FImages%2FTeamLogicalModel%20%281%29.png)
 
 # Physical Model
 
