@@ -8,4 +8,4 @@
 
 # Physical Model
 
-![Physical Model]()
+![Physical Model](https://github.com/WSU-kduncan/cs3900-autobody-4/blob/main/DB%2FImages%2FTeamPhysicalModel.png)
