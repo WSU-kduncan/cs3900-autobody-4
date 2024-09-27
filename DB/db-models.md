@@ -21,4 +21,4 @@
 
 ![Physical Model](https://github.com/WSU-kduncan/cs3900-autobody-4/blob/main/DB%2FImages%2FTeamPhysicalModel.png)
 
-> description
+> The provided physical database model is used to represent how the data will be stored within the database. More importantly the physical model shows the data type of each entity and whether or not the entity will be null to start out. The entities are not null values are MakeID, FirstName, LastName, MID, Make, Model, Year, Vin, OrderNumber, DateRecieved, Cost, Customer, Description (Service table) and ServiceCode. The entities that can be null are, DateCompleted, Parts, and Description (Vehicle table). The physical model also shows the relatonships between the tables. This model shows a one to many relationship from Mechanic to Vehicle, MechanicMake to Vehicle, and Service to ServiceOrder. There is also a one to one relationship which is one vehicle for each one of the ServiceOrder.
