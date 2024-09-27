@@ -2,7 +2,7 @@
 
 ![Conceptual Model](https://github.com/WSU-kduncan/cs3900-autobody-4/blob/b5fbb48e9736d8618a6fb2784a841abfac68e254/DB/Images/Conceptual.png)
 
-> description
+> The following coneptual model is represented of 4 entities; Service Order, Vehicle, Service, and Mechanic. Each enetity is then made up of attributes, the Service order includes the date recieved and completed, customer, order number, and cost. These are essential things related to creating a successful service order. Next, The vehicle entity is made up of a make, vin, model, year and description. The service enetity includes a description and parts, and lastly the mechanic has a mid, name and specialty. These entities also have relationships with one another, the service order is completed by the mechanics and the mechanic does the service. Furthermore, the vehicle entity gets a service and needs a service order.
 
 # Logical Model
 
