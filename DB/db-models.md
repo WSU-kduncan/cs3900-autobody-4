@@ -8,7 +8,14 @@
 
 ![Logical Model](https://github.com/WSU-kduncan/cs3900-autobody-4/blob/main/DB%2FImages%2FTeamLogicalModel%20%281%29.png)
 
-> description
+> The provided logical database model is designed to manage vehicle services and maintenance, consisting of five main entities: Service, Service Order, Vehicle, Mechanic, and Specialty. Each entity has a unique primary key that ensures the uniqueness of its records. The Service entity, identified by the ServiceCode primary key. The Service Order entity, with Order Number as its primary key. It has foreign keys linking it to other entities, specifically Vin from Vehicle, MID from Mechanic, and ServiceCode from Service, establishing relationships with these entities. The Vehicle entity, is identified by the Vin primary key and references a MakeID from the Specialty entity to indicate the vehicle's specialty type. The Mechanic entity is defined by the MID primary key and it references the MakeID from the Specialty entity to indicate the mechanic’s area of specialization. The Specialty entity, identified by MakeID, serves as a lookup table to define the specialties associated with both vehicles and mechanics, forming a bridge between the two.
+
+
+
+
+
+
+
 
 # Physical Model
 
