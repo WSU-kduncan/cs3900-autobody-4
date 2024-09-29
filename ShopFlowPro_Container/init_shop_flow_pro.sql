@@ -52,6 +52,7 @@ CREATE TABLE Vehicle (
     MakeID INT,
     Model VARCHAR(25) NOT NULL,
     Year INT NOT NULL,
+    Description VARCHAR(250) NULL,
 -- add FOREIGN KEY MakeID
 FOREIGN KEY (MakeID) REFERENCES Make(MakeID)
 );
