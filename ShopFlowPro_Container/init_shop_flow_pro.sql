@@ -62,8 +62,15 @@ CREATE TABLE Service (
     ServiceID INT PRIMARY KEY AUTO_INCREMENT,
     ServiceName VARCHAR(100) NOT NULL
 );
-INSERT INTO Service (ServiceName, ServiceCost) VALUES ('Tire Change', 1250);
-INSERT INTO Service (ServiceName, ServiceCost) VALUES ('Oil Change', 75.60);
+INSERT INTO Service (ServiceName) VALUES ('Tire Change');
+INSERT INTO Service (ServiceName) VALUES ('Oil Change');
+INSERT INTO Service (ServiceName) VALUES ('Tire Rotation');
+INSERT INTO Service (ServiceName) VALUES ('Replace Battery');
+INSERT INTO Service (ServiceName) VALUES ('Break Change');
+INSERT INTO Service (ServiceName) VALUES ('Alignment');
+INSERT INTO Service (ServiceName) VALUES ('Air Filter Replacement');
+INSERT INTO Service (ServiceName) VALUES ('Transmission Fluid');
+INSERT INTO Service (ServiceName) VALUES ('Timing Belt');
 
 DROP TABLE IF EXISTS shop_flow_pro.ServiceOrder;
 -- Create ServiceOrder table
@@ -76,7 +83,7 @@ CREATE TABLE ServiceOrder (
     DateCompleted DATETIME NULL,
     CustomerFName VARCHAR(50),
     CustomerLName VARCHAR(50),
-     ServiceCost DECIMAL(10, 2) NOT NULL
+    ServiceCost DECIMAL(10, 2) NOT NULL,
 -- Create the foreign keys VIN, MID, and Service ID
     FOREIGN KEY (VIN) REFERENCES Vehicle(VIN),
     FOREIGN KEY (MID) REFERENCES Mechanic(MID),
