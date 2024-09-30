@@ -70,7 +70,7 @@ INSERT INTO Service (ServiceName) VALUES ('Break Change');
 INSERT INTO Service (ServiceName) VALUES ('Alignment');
 INSERT INTO Service (ServiceName) VALUES ('Air Filter Replacement');
 INSERT INTO Service (ServiceName) VALUES ('Transmission Fluid');
-INSERT INTO Service (ServiceName) VALUES ('Timing Belt');
+INSERT INTO Service (ServiceName) VALUES ('Timing Belt Replacement');
 
 DROP TABLE IF EXISTS shop_flow_pro.ServiceOrder;
 -- Create ServiceOrder table
