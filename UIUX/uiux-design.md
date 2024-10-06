@@ -12,7 +12,7 @@
 > This user flow represents the flow of a user creating a service order within our application. The user starts by searching the web page and signing in. They are then met with the decision of whether they want to create a work order, if they don't then their journey ends. Otherwise, they hit the create work order button, fills in the necessary information and hits the save button which brings then to the end of their journey.
 
 ## Update
-![UserFlowUpdate](UIUX\UIUXImages\GroupCreate.png)
+![UserFlowUpdate](UIUX/UIUXImages/GroupCreate.png)
 > This user flow represents the flow of a user updating a service order within our application. The user will open the webpage and log in. The user will then search for the service order they want to edit. The user will select the service order they would like to edit. The user will edit the fields they want to edit. If they are satisfied with the changes they will click the save changes button. Else they will change more fields.
 
 ## DELETE
