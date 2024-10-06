@@ -16,7 +16,7 @@
 > This user flow represents the flow of a user updating a service order within our application. The user will open the webpage and log in. The user will then search for the service order they want to edit. The user will select the service order they would like to edit. The user will edit the fields they want to edit. If they are satisfied with the changes they will click the save changes button. Else they will change more fields.
 
 ## DELETE
-![UserFlowDelete](UIUX\UIUXImages\GroupDelete.png)
+![UserFlowDelete](https://github.com/WSU-kduncan/cs3900-autobody-4/blob/296ba06aa72125ed3892c28636fa39053984f029/UIUX/UIUXImages/GroupDelete.png)
 > This user flow represents the flow of a user deleting a service order within our application. The user will first log into Shop Flow Pro. The user will then search for the service order they would want to delete. Once they find the service order they will select the service order, and click the trash bin button. The user will be prompted if they are sure they want to delete the selected service order. If the user is sure the service order will be deleted and it will be the end of the flow. Else the user will return to search.
 
 
