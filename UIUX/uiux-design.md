@@ -5,17 +5,19 @@
 
 ## Search
 ![UserFlowSearch](https://github.com/user-attachments/assets/be678810-7546-4be5-af77-ae3f83c6d69a)
-> The following user flow represents the flow of a user searching a service order for our shop flow pro. The user first starts by opening up the internet to type in the web page url and sign in. After, they will be met with multiple things but in this case they will be clicking the search bar. The user then types in the customers last name and hits search, this is then where they scroll to find the service order. If the service order is not there they loop back to searching again, incase there was a typo, otherwise they have successfully searched for the customer and comes to an end.
+> The following user flow represents the flow of a user searching a service order for our shop flow pro. The user first starts by opening up the internet to type in the web page URL and sign in. After, they will be met with multiple things but in this case they will be clicking the search bar. The user then types in the customers last name and hits search, this is then where they scroll to find the service order. If the service order is not there they loop back to searching again, incase there was a typo, otherwise they have successfully searched for the customer and comes to an end.
 
 ## Create
 ![UserFlowCreate](https://github.com/user-attachments/assets/cba3dd90-a03e-469e-af7f-bdd0f38508cd)
 > This user flow represents the flow of a user creating a service order within our application. The user starts by searching the web page and signing in. They are then met with the decision of whether they want to create a work order, if they don't then their journey ends. Otherwise, they hit the create work order button, fills in the necessary information and hits the save button which brings then to the end of their journey.
 
 ## Update
-> TODO
+![UserFlowUpdate](UIUX\UIUXImages\GroupCreate.png)
+> This user flow represents the flow of a user updating a service order within our application. The user will open the webpage and log in. The user will then search for the service order they want to edit. The user will select the service order they would like to edit. The user will edit the fields they want to edit. If they are satisfied with the changes they will click the save changes button. Else they will change more fields.
 
 ## DELETE
-> TODO
+![UserFlowDelete](UIUX\UIUXImages\GroupDelete.png)
+> This user flow represents the flow of a user deleting a service order within our application. The user will first log into Shop Flow Pro. The user will then search for the service order they would want to delete. Once they find the service order they will select the service order, and click the trash bin button. The user will be prompted if they are sure they want to delete the selected service order. If the user is sure the service order will be deleted and it will be the end of the flow. Else the user will return to search.
 
 
 # WireFrames and Descriptions
