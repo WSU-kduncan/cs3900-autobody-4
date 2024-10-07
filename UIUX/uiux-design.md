@@ -33,7 +33,8 @@
 
 
 ## Create
-> TODO
+![WireFrameCreate](https://github.com/user-attachments/assets/95606f6a-1077-4613-aea8-49d994e71662)
+
 
 ## Update
 ![UpdateWireframe](https://github.com/WSU-kduncan/cs3900-autobody-4/blob/67fc1d432bbfd5b85c8f47e6a7cd53507786a19d/UIUX/UIUXImages/GroupEditWireframe.png)
