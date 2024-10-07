@@ -10,6 +10,7 @@
 
 ## Create
 ![UserFlowCreate](https://github.com/user-attachments/assets/cba3dd90-a03e-469e-af7f-bdd0f38508cd)
+
 > This user flow represents the flow of a user creating a service order within our application. The user starts by searching the web page and signing in. They are then met with the decision of whether they want to create a work order, if they don't then their journey ends. Otherwise, they hit the create work order button, fills in the necessary information and hits the save button which brings then to the end of their journey.
 
 ## Update
@@ -37,7 +38,8 @@
 
 ## Update
 ![UpdateWireframe](https://github.com/WSU-kduncan/cs3900-autobody-4/blob/67fc1d432bbfd5b85c8f47e6a7cd53507786a19d/UIUX/UIUXImages/GroupEditWireframe.png)
-> 
+
+> This wire frame has a simplistic and uniform design. The user can edit the text boxes as they wish. In the technician box you can edit (by clicking the pencil) or delete (by clicking the trash can) the assigned technician or press the Assign button to assign an additional technician. The user can change the time and date by editing the text boxes
 
 ## DELETE
 > TODO   
