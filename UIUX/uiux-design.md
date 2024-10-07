@@ -1,7 +1,7 @@
 # User Flows and Descriptions
 
 ## Landing/main application page
-![UserFlowLanding](UIUX/UIUXImages/landing.png)
+![UserFlowLanding](/UIUX/UIUXImages/landing.png)
 > The following user flow represents the flow of a arriving to the landing page. The user would open the device and open a search engine where they would type in the URL of the website into the search bar. After clicking search they would navigate to the correct website and arrive to the landing page.
 
 ## Search
