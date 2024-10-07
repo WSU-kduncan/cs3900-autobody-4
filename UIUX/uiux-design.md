@@ -40,7 +40,5 @@
 ## Update
 ![UpdateWireframe](https://github.com/WSU-kduncan/cs3900-autobody-4/blob/67fc1d432bbfd5b85c8f47e6a7cd53507786a19d/UIUX/UIUXImages/GroupEditWireframe.png)
 
-> This wire frame has a simplistic and uniform design. The user can edit the text boxes as they wish. In the technician box you can edit (by clicking the pencil) or delete (by clicking the trash can) the assigned technician or press the Assign button to assign an additional technician. The user can change the time and date by editing the text boxes
-
 ## DELETE
 > TODO   
