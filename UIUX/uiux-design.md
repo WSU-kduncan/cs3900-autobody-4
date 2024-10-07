@@ -42,4 +42,4 @@
 ![UpdateWireframe](https://github.com/WSU-kduncan/cs3900-autobody-4/blob/67fc1d432bbfd5b85c8f47e6a7cd53507786a19d/UIUX/UIUXImages/GroupEditWireframe.png)
 
 ## DELETE
-![DeleteWireframe](/UIUX/UIUXImages/deletewire.png)
+![DeleteWireframe](/UIUX/UIUXImages/deleteframe.png)
