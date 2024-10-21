@@ -2,9 +2,7 @@ openapi: 3.0.3
 info:
   title: Shop Flow PRO API
   version: 1.0.0
-  contact: {}
-servers:
-  - url: 'http://localhost:8080/work-order-pro-service'
+  description: API to manage mechanics, vehicles, services, and service orders in the shop flow pro system
 paths:
   /api/mechanics/{MID}:
     delete:
@@ -89,11 +87,20 @@ paths:
               type: array
               items:
                 type: object
-                type: object
                 properties:
                   message:
                     type: string
                     example: Service order deleted successfully
 
-
+tags:
+  - name: Mechanics
+    description: API to manage mechanics.
+  - name: Makes
+    description: API to manage vehicle makes.
+  - name: Vehicles
+    description: API to manage vehicles.
+  - name: Services
+    description: API to manage services.
+  - name: ServiceOrders
+    description: API to manage service orders.
 
