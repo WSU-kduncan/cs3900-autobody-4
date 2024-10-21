@@ -1,0 +1,122 @@
+openapi: 3.0.3
+info:
+  title: Shop_flow_Pro API
+  version: 1.0.0
+  contact: {}
+servers:
+  - url: 'http://localhost:8080/shop_flow_pro'
+paths:
+  /Mechanics/{MechanicID}:
+    put:
+      parameters:
+        - name: mechanicID
+          in: path
+          required: true
+          schema:
+            type: int
+      tags:
+        - Mechanics
+      summary: Update Mechanic
+      description: Update Mechanic
+      operationId: update Mechanic
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                firstName:
+                  type: string
+                lastName:
+                  type: string
+                mechanicID:
+                  type: int
+      responses:
+        '200':
+          description: Success Response / Success Response - when remove state
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      code:
+                        type: string
+                      firstName:
+                        type: string
+                      lastName:
+                        type: string
+                      mechanicID:
+                        type: int
+                  meta:
+                    type: object
+                    properties:
+                      message:
+                        type: string
+
+  /serviceOrders/{SERVICE_ORDER_ID}:
+    put:
+      tags:
+        - WorkOrders
+      summary: Update WorkOrder
+      description: Update WorkOrder
+      operationId: updateWorkorder
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                vin:
+                  type: number
+                dateRecieved:
+                  type: string
+                dateTimeCompleted:
+                  type: string
+                mechanicID:
+                  type: int
+                serviceID:
+                  type: int
+                customerFirstName:
+                  type: string
+                customerLastName:
+                  type: string
+                serviceCost:
+                  type: number
+      responses:
+        '200':
+          description: Success Response / Remove Line Item / Add Line Item
+          content:
+            application/json:
+            schema:
+              type: object
+              properties:
+                vin:
+                  type: number
+                dateRecieved:
+                  type: string
+                dateTimeCompleted:
+                  nullable: true
+                mechanicID:
+                  type: int
+                serviceID:
+                  type: int
+                customerFirstName:
+                  type: string
+                customerLastName:
+                  type: string
+                serviceCost:
+                  type: number
+                  meta:
+                    type: object
+                    properties:
+                      message:
+                        type: string
+    parameters:
+      - name: serviceOrderID
+        in: path
+        required: true
+        schema:
+          type: int
