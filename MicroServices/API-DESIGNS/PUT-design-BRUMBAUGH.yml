@@ -6,28 +6,34 @@ info:
 servers:
   - url: 'http://localhost:8080/shop_flow_pro'
 paths:
-  /Mechanics:
-    post:
+  /Mechanics/{MechanicID}:
+    put:
+      parameters:
+        - name: mechanicID
+          in: path
+          required: true
+          schema:
+            type: int
       tags:
         - Mechanics
-      summary: Add Mechanics
-      description: Add Mechanics
-      operationId: addMechanics
+      summary: Update Mechanic
+      description: Update Mechanic
+      operationId: update Mechanic
       requestBody:
         content:
           application/json:
             schema:
               type: object
               properties:
-                mechanicID:
-                  type: int
                 firstName:
                   type: string
                 lastName:
                   type: string
+                mechanicID:
+                  type: int
       responses:
-        '201':
-          description: Success Response - Added Mechanic
+        '200':
+          description: Success Response - when mechanic is added
           content:
             application/json:
               schema:
@@ -36,69 +42,71 @@ paths:
                   data:
                     type: object
                     properties:
-                      mechanicID:
-                        type: int
+                      code:
+                        type: string
                       firstName:
                         type: string
                       lastName:
                         type: string
+                      mechanicID:
+                        type: int
                   meta:
                     type: object
                     properties:
                       message:
                         type: string
-  /serviceOrders
-    post:
+
+  /serviceOrders/{SERVICE_ORDER_ID}:
+    put:
       tags:
         - ServiceOrders
-      summary: Add ServiceOrder
-      description: Add ServiceOrder
-      operationId: addServiceOrder
+      summary: Update ServiceOrder
+      description: Update ServiceOrder
+      operationId: updateServiceOrder
       requestBody:
         content:
           application/json:
             schema:
               type: object
               properties:
-                serviceOrderId:
-                  type: int
+                vin:
+                  type: number
                 dateRecieved:
                   type: string
-                dateCompleted:
-                  nullable: string
-                firstName:
-                  type: string
-                lastname:
+                dateTimeCompleted:
                   type: string
                 mechanicID:
                   type: int
-                vin:
-                  type: number
+                serviceID:
+                  type: int
+                customerFirstName:
+                  type: string
+                customerLastName:
+                  type: string
                 serviceCost:
                   type: number
-
       responses:
-        '201':
-          description: Success Response - Added ServiceOrder
+        '200':
+          description: Success Response - when service order is added
           content:
             application/json:
             schema:
               type: object
               properties:
-                serviceOrderId:
-                  type: int
-                dateRecieved:
-                  type: string
-                dateCompleted:
-                  nullable: string
-                firstName:
-                  type: string
-                lastname:
-                  type: string
-                mechanicID:
-                  type: int
                 vin:
                   type: number
+                dateRecieved:
+                  type: string
+                dateTimeCompleted:
+                  nullable: true
+                mechanicID:
+                  type: int
+                serviceID:
+                  type: int
+                customerFirstName:
+                  type: string
+                customerLastName:
+                  type: string
                 serviceCost:
                   type: number
                   meta:
@@ -106,3 +114,9 @@ paths:
                     properties:
                       message:
                         type: string
+    parameters:
+      - name: serviceOrderID
+        in: path
+        required: true
+        schema:
+          type: int
