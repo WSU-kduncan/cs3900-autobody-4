@@ -33,7 +33,7 @@ paths:
                   type: int
       responses:
         '200':
-          description: Success Response / Success Response - when remove state
+          description: Success Response - when mechanic is added
           content:
             application/json:
               schema:
@@ -87,7 +87,7 @@ paths:
                   type: number
       responses:
         '200':
-          description: Success Response / Remove Line Item / Add Line Item
+          description: Success Response - when service order is added
           content:
             application/json:
             schema:
