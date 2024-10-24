@@ -76,7 +76,7 @@ DROP TABLE IF EXISTS shop_flow_pro.ServiceOrder;
 -- Create ServiceOrder table
 CREATE TABLE ServiceOrder (
     ServiceOrderID INT PRIMARY KEY AUTO_INCREMENT,
-    VIN DECIMAL(17,0),
+    VIN VARCHAR(17),
     MID INT,
     ServiceID INT,
     DateRecieved DATETIME NOT NULL,
