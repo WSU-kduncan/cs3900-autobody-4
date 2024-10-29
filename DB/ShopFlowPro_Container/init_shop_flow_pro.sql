@@ -81,8 +81,8 @@ CREATE TABLE ServiceOrder (
     ServiceID INT,
     DateRecieved DATETIME NOT NULL,
     DateCompleted DATETIME NULL,
-    CustomerFName VARCHAR(50),
-    CustomerLName VARCHAR(50),
+    CustomerFirstName VARCHAR(50),
+    CustomerLasrName VARCHAR(50),
     ServiceCost DECIMAL(10, 2) NOT NULL,
 -- Create the foreign keys VIN, MID, and Service ID
     FOREIGN KEY (VIN) REFERENCES Vehicle(VIN),
