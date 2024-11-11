@@ -5,7 +5,7 @@
         "name": "ShopFlowProServiceApplication",
         "request": "launch",
         "mainClass": "com.wsu.shopflowproservice.ShopFlowProServiceApplication",
-        "projectName": "ShopFlowProMicroService",
+        "projectName": "ShopFlowPro-service",
         "args": "",
         "env": {
           "SERVER_PORT": "8080",
@@ -21,7 +21,7 @@
         "name": "ShopFlowProServiceApplication",
         "request": "launch",
         "mainClass": "com.wsu.shopflowproservice.ShopFlowProServiceApplication",
-        "projectName": "ShopFlowProMicroService",
+        "projectName": "ShopFlowPro-service",
         "args": "",
         "env": {
           "SERVER_PORT": "8080",
