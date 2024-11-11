@@ -29,3 +29,6 @@
 - The frontend must provide a `serviceOrderId`, and it returns with either an unsuccessfully or successfully deleted ServiceOrder message.
 
 - The query should select from the ServiceOrde table then the serviceOrderId column, to select the row based on the Id to delete it.
+
+### DELETE LOGIC
+- In our case we have decided to have a DELETE endpoint for our ServiceOrders, however a business may not due to tracking purposes and the ability to view old ServiceOrders.
