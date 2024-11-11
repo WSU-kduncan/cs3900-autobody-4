@@ -48,7 +48,7 @@ CREATE TABLE MechanicToMake (
 DROP TABLE IF EXISTS shop_flow_pro.Vehicle;
 -- Create Vehicle table
 CREATE TABLE Vehicle (
-    VIN DECIMAL(17,0) PRIMARY KEY,
+    VIN VARCHAR(17) PRIMARY KEY,
     MakeID INT,
     Model VARCHAR(25) NOT NULL,
     Year INT NOT NULL,
