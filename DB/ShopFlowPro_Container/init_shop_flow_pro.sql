@@ -3,100 +3,100 @@ USE shop_flow_pro;
 
 
 -- shop_flow_status
-DROP TABLE IF EXISTS shop_flow_pro.Mechanic;
+DROP TABLE IF EXISTS shop_flow_pro.mechanic;
 -- Create Mechanic table
-CREATE TABLE Mechanic (
+CREATE TABLE mechanic (
     mid INT AUTO_INCREMENT NOT NULL,
-    firstName VARCHAR(50) NOT NULL,
-    lastName VARCHAR(50) NOT NULL,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
     PRIMARY KEY (mid)
 );
-INSERT INTO shop_flow_pro.Mechanic (firstName, lastName) VALUES ('Alex', 'Smith');
-INSERT INTO shop_flow_pro.Mechanic (firstName, lastName) VALUES ('Jamie', 'Johnson');
-INSERT INTO shop_flow_pro.Mechanic (firstName, lastName) VALUES ('Taylor', 'Brown');
-INSERT INTO shop_flow_pro.Mechanic (firstName, lastName) VALUES ('Morgan', 'Davis');
-INSERT INTO shop_flow_pro.Mechanic (firstName, lastName) VALUES ('Casey', 'Wilson');
+INSERT INTO shop_flow_pro.mechanic (first_name, last_name) VALUES ('Alex', 'Smith');
+INSERT INTO shop_flow_pro.mechanic (first_name, last_name) VALUES ('Jamie', 'Johnson');
+INSERT INTO shop_flow_pro.mechanic (first_name, last_name) VALUES ('Taylor', 'Brown');
+INSERT INTO shop_flow_pro.mechanic (first_name, last_name) VALUES ('Morgan', 'Davis');
+INSERT INTO shop_flow_pro.mechanic (first_name, last_name) VALUES ('Casey', 'Wilson');
 
 
-DROP TABLE IF EXISTS shop_flow_pro.Make;
+DROP TABLE IF EXISTS shop_flow_pro.make;
 -- Create Make table
-CREATE TABLE Make (
-    makeId INT PRIMARY KEY AUTO_INCREMENT,
-    makeName VARCHAR(25) NOT NULL
+CREATE TABLE make (
+    make_id INT PRIMARY KEY AUTO_INCREMENT,
+    make_name VARCHAR(25) NOT NULL
 );
-INSERT INTO shop_flow_pro.Make (makeName) VALUES ('Toyota');
-INSERT INTO shop_flow_pro.Make (makeName) VALUES ('Ford');
-INSERT INTO shop_flow_pro.Make (makeName) VALUES ('Chevy');
-INSERT INTO shop_flow_pro.Make (makeName) VALUES ('Honda');
-INSERT INTO shop_flow_pro.Make (makeName) VALUES ('Dodge');
-INSERT INTO shop_flow_pro.Make (makeName) VALUES ('Audi');
-INSERT INTO shop_flow_pro.Make (makeName) VALUES ('BMW');
-INSERT INTO shop_flow_pro.Make (makeName) VALUES ('KIA');
-INSERT INTO shop_flow_pro.Make (makeName) VALUES ('Nissan');
-INSERT INTO shop_flow_pro.Make (makeName) VALUES ('Buick');
-INSERT INTO shop_flow_pro.Make (makeName) VALUES ('Hyundai');
+INSERT INTO shop_flow_pro.make (make_name) VALUES ('Toyota');
+INSERT INTO shop_flow_pro.make (make_name) VALUES ('Ford');
+INSERT INTO shop_flow_pro.make (make_name) VALUES ('Chevy');
+INSERT INTO shop_flow_pro.make (make_name) VALUES ('Honda');
+INSERT INTO shop_flow_pro.make (make_name) VALUES ('Dodge');
+INSERT INTO shop_flow_pro.make (make_name) VALUES ('Audi');
+INSERT INTO shop_flow_pro.make (make_name) VALUES ('BMW');
+INSERT INTO shop_flow_pro.make (make_name) VALUES ('KIA');
+INSERT INTO shop_flow_pro.make (make_name) VALUES ('Nissan');
+INSERT INTO shop_flow_pro.make (make_name) VALUES ('Buick');
+INSERT INTO shop_flow_pro.make (make_name) VALUES ('Hyundai');
 
 -- Create Mechanic-to-Make table (junction table)
-DROP TABLE IF EXISTS shop_flow_pro.MechanicToMake;
-CREATE TABLE MechanicToMake (
+DROP TABLE IF EXISTS shop_flow_pro.mechanic_to_make;
+CREATE TABLE mechanic_to_make (
     mid INT,
-    makeId INT,
-    PRIMARY KEY (mid, makeId),
+    make_id INT,
+    PRIMARY KEY (mid, make_id),
 -- Add foreign Keys MID and MakeID
-    FOREIGN KEY (mid) REFERENCES Mechanic(mid),
-    FOREIGN KEY (makeId) REFERENCES Make(makeId)
+    FOREIGN KEY (mid) REFERENCES mechanic(mid),
+    FOREIGN KEY (make_id) REFERENCES make(make_id)
 );
-DROP TABLE IF EXISTS shop_flow_pro.Vehicle;
+DROP TABLE IF EXISTS shop_flow_pro.vehicle;
 -- Create Vehicle table
-CREATE TABLE Vehicle (
+CREATE TABLE vehicle (
     vin VARCHAR(17) PRIMARY KEY,
-    makeId INT,
+    make_id INT,
     model VARCHAR(25) NOT NULL,
     year INT NOT NULL,
     description VARCHAR(250) NULL,
 -- add FOREIGN KEY MakeID
-FOREIGN KEY (makeId) REFERENCES Make(makeId)
+FOREIGN KEY (make_id) REFERENCES make(make_id)
 );
-DROP TABLE IF EXISTS shop_flow_pro.Service;
+DROP TABLE IF EXISTS shop_flow_pro.service;
 -- Create Service table
-CREATE TABLE Service (
-    serviceId INT PRIMARY KEY AUTO_INCREMENT,
-    serviceName VARCHAR(100) NOT NULL
+CREATE TABLE service (
+    service_id INT PRIMARY KEY AUTO_INCREMENT,
+    service_name VARCHAR(100) NOT NULL
 );
-INSERT INTO Service (serviceName) VALUES ('Tire Change');
-INSERT INTO Service (serviceName) VALUES ('Oil Change');
-INSERT INTO Service (serviceName) VALUES ('Tire Rotation');
-INSERT INTO Service (serviceName) VALUES ('Replace Battery');
-INSERT INTO Service (serviceName) VALUES ('Break Change');
-INSERT INTO Service (serviceName) VALUES ('Alignment');
-INSERT INTO Service (serviceName) VALUES ('Air Filter Replacement');
-INSERT INTO Service (serviceName) VALUES ('Transmission Fluid');
-INSERT INTO Service (serviceName) VALUES ('Timing Belt Replacement');
+INSERT INTO service (service_name) VALUES ('Tire Change');
+INSERT INTO service (service_name) VALUES ('Oil Change');
+INSERT INTO service (service_name) VALUES ('Tire Rotation');
+INSERT INTO service (service_name) VALUES ('Replace Battery');
+INSERT INTO service (service_name) VALUES ('Break Change');
+INSERT INTO service (service_name) VALUES ('Alignment');
+INSERT INTO service (service_name) VALUES ('Air Filter Replacement');
+INSERT INTO service (service_name) VALUES ('Transmission Fluid');
+INSERT INTO service (service_name) VALUES ('Timing Belt Replacement');
 
-DROP TABLE IF EXISTS shop_flow_pro.ServiceOrder;
+DROP TABLE IF EXISTS shop_flow_pro.service_order;
 -- Create ServiceOrder table
-CREATE TABLE ServiceOrder (
-    serviceOrderId INT PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE service_order (
+    service_order_id INT PRIMARY KEY AUTO_INCREMENT,
     vin VARCHAR(17),
     mid INT,
-    serviceId INT,
-    dateRecieved DATETIME NOT NULL,
-    dateCompleted DATETIME NULL,
-    customerFirstName VARCHAR(50),
-    customerLasrName VARCHAR(50),
-    serviceCost DECIMAL(10, 2) NOT NULL,
+    service_id INT,
+    date_recieved DATETIME NOT NULL,
+    date_completed DATETIME NULL,
+    customer_first_name VARCHAR(50),
+    customer_last_name VARCHAR(50),
+    service_cost DECIMAL(10, 2) NOT NULL,
 -- Create the foreign keys VIN, MID, and Service ID
-    FOREIGN KEY (vin) REFERENCES Vehicle(vin),
-    FOREIGN KEY (mid) REFERENCES Mechanic(mid),
-    FOREIGN KEY (serviceId) REFERENCES Service(serviceId)
+    FOREIGN KEY (vin) REFERENCES vehicle(vin),
+    FOREIGN KEY (mid) REFERENCES mechanic(mid),
+    FOREIGN KEY (service_id) REFERENCES service(service_id)
 );
 
 -- Create serviceOrderLineItem
-DROP TABLE IF EXISTS shop_flow_pro.ServiceOrderLineItem;
+DROP TABLE IF EXISTS shop_flow_pro.service_order_line_item;
 
-CREATE TABLE ServiceOrderLineItem (
-        serviceOrderId INT,
-        serviceId INT,
+CREATE TABLE service_order_line_item (
+        service_order_id INT,
+        service_id INT,
 	-- Create Primary Key
-	PRIMARY KEY(serviceOrderId, serviceId)
+	PRIMARY KEY(service_order_id, service_id)
 );
