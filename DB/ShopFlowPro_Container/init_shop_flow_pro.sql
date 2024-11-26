@@ -1,6 +1,7 @@
 CREATE DATABASE IF NOT EXISTS shop_flow_pro;
 USE shop_flow_pro;
 
+
 -- shop_flow_status
 DROP TABLE IF EXISTS shop_flow_pro.Mechanic;
 -- Create Mechanic table
@@ -8,7 +9,7 @@ CREATE TABLE Mechanic (
     mid INT AUTO_INCREMENT NOT NULL,
     firstName VARCHAR(50) NOT NULL,
     lastName VARCHAR(50) NOT NULL,
-    PRIMARY KEY (MID)
+    PRIMARY KEY (mid)
 );
 INSERT INTO shop_flow_pro.Mechanic (firstName, lastName) VALUES ('Alex', 'Smith');
 INSERT INTO shop_flow_pro.Mechanic (firstName, lastName) VALUES ('Jamie', 'Johnson');
@@ -54,7 +55,7 @@ CREATE TABLE Vehicle (
     year INT NOT NULL,
     description VARCHAR(250) NULL,
 -- add FOREIGN KEY MakeID
-FOREIGN KEY (makeId) REFERENCES make(MakeId)
+FOREIGN KEY (makeId) REFERENCES Make(makeId)
 );
 DROP TABLE IF EXISTS shop_flow_pro.Service;
 -- Create Service table
@@ -75,7 +76,7 @@ INSERT INTO Service (serviceName) VALUES ('Timing Belt Replacement');
 DROP TABLE IF EXISTS shop_flow_pro.ServiceOrder;
 -- Create ServiceOrder table
 CREATE TABLE ServiceOrder (
-    serviceOrderID INT PRIMARY KEY AUTO_INCREMENT,
+    serviceOrderId INT PRIMARY KEY AUTO_INCREMENT,
     vin VARCHAR(17),
     mid INT,
     serviceId INT,
@@ -88,4 +89,14 @@ CREATE TABLE ServiceOrder (
     FOREIGN KEY (vin) REFERENCES Vehicle(vin),
     FOREIGN KEY (mid) REFERENCES Mechanic(mid),
     FOREIGN KEY (serviceId) REFERENCES Service(serviceId)
+);
+
+-- Create serviceOrderLineItem
+DROP TABLE IF EXISTS shop_flow_pro.ServiceOrderLineItem;
+
+CREATE TABLE ServiceOrderLineItem (
+        serviceOrderId INT,
+        serviceId INT,
+	-- Create Primary Key
+	PRIMARY KEY(serviceOrderId, serviceId)
 );
