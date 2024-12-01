@@ -1,0 +1,20 @@
+<div class="homepage">
+  <div class="content">
+    <h2>Welcome to ShopFlowPro</h2>
+    <div class="buttons">
+      <button routerLink="/service-list"> Explore Services</button>
+      <button routerLink="/create-new-service-order"> Create New Service Order</button>
+    </div>
+    <div class="service-orders">
+      <h3>Today's Service Orders</h3>
+      <div class="order" *ngFor="let order of todaysOrders">
+        <p>Order ID: {{ order.id }} - Service ID: {{ order.serviceId }} - Customer: {{ order.customer_first_name }} {{ order.customer_last_name }} - VIN: {{ order.vin }}</p>
+        <a [href]="'#view-order-' + order.id"><button>View Details</button></a>
+      </div>
+    </div>
+    <div class="footer">
+      <button routerLink="/about"> About</button>
+      <button routerLink="/contact"> Contact Us</button>
+    </div>
+  </div>
+</div>

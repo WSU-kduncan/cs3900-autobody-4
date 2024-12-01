@@ -1,0 +1,65 @@
+.create-service-order {
+    margin-left: 250px; /* Adjust for the fixed navbar width */
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #ecf0f1; /* Light gray background */
+    min-height: 100vh;
+  }
+  
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #34495e; /* Darker gray for titles */
+  }
+  
+  .form-group {
+    margin: 15px 0;
+    text-align: left;
+  }
+  
+  label {
+    font-size: 1rem;
+    color: #34495e;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  
+  .form-control:focus {
+    border-color: #3498db;
+    outline: none;
+  }
+  
+  button.submit-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db; /* Blue button */
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  button.submit-btn:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+  }
+  
+  button:disabled {
+    background-color: #bdc3c7; /* Grey out disabled button */
+    cursor: not-allowed;
+  }
+  

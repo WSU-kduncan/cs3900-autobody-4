@@ -1,0 +1,16 @@
+<div class="mechanics-page">
+  <div class="content">
+    <h2>Our Mechanics</h2>
+    <div class="mechanic-list">
+      <!-- Loop through the mechanics array -->
+      <div *ngFor="let mechanic of mechanics" class="mechanic">
+        <div class="mechanic-details">
+          <span>Mechanic ID: {{ mechanic.id }} -</span>
+          <span>Name: {{ mechanic.name }} -</span>
+          <span>Specialty: {{ mechanic.specialty }}</span>
+        </div>
+        <button>View Profile</button>
+      </div>
+    </div>
+  </div>
+</div>

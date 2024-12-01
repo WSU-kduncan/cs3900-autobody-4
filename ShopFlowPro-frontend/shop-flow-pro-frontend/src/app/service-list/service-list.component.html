@@ -1,0 +1,11 @@
+<div class="service-list-container">
+    <h2>Explore Our Services</h2>
+    <div class="service-list">
+      <div *ngFor="let service of services" class="service-item">
+        <h2>{{ service.name }}</h2>
+        <p>{{ service.description }}</p>
+        <button (click)="viewServiceDetails(service.id)">View Details</button>
+      </div>
+    </div>
+  </div>
+  
