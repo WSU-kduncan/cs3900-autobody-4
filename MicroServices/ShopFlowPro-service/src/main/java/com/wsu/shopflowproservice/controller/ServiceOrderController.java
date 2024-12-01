@@ -15,12 +15,9 @@ import com.wsu.shopflowproservice.dto.ServiceOrderDTO;
 import com.wsu.shopflowproservice.dto.ServiceResponseDTO;
 import com.wsu.shopflowproservice.service.ServiceOrderService;
 
-import io.micrometer.core.ipc.http.HttpSender.Response;
 import lombok.RequiredArgsConstructor;
 
 import static com.wsu.shopflowproservice.utilities.Constants.MESSAGE;
-import static com.wsu.shopflowproservice.utilities.Constants.PAGE_COUNT;
-import static com.wsu.shopflowproservice.utilities.Constants.RESULT_COUNT;
 
 import java.util.Map;
 
@@ -42,6 +39,7 @@ public class ServiceOrderController {
         return new ResponseEntity<>(ServiceResponseDTO.builder().meta(Map.of(MESSAGE, "Service Order retrieved successfully"))
         .data(serviceOrderService.get(serviceOrderId)).build(), HttpStatus.OK);
     }
+    
 
     /**
      * This endpoint used for add a new serviceOrder
@@ -49,9 +47,9 @@ public class ServiceOrderController {
      * @return - ServiceResponseDTO which include serviceOrder saved entity
      */
     @PostMapping
-    public ResponseEntity<ServiceResponseDTO> addServiceOrder(@RequestBody ServiceOrderDTO serviceOrder) {
+    public ResponseEntity<ServiceResponseDTO> addServiceOrder(@RequestBody ServiceOrderDTO serviceOrderDTO) {
         return new ResponseEntity<>(ServiceResponseDTO.builder().meta(Map.of(MESSAGE, "ServiceOrder added successfully."))
-        .data(ServiceOrderService.add(serviceOrder)).build(), HttpStatus.CREATED);
+        .data(serviceOrderService.add(serviceOrderDTO)).build(), HttpStatus.CREATED);
     }
 
     /**
@@ -62,9 +60,9 @@ public class ServiceOrderController {
      */
     //
     @PutMapping(value = "{serviceOrderId}")
-    public ResponseEntity<ServiceResponseDTO> updateServiceOrder(@PathVariable Integer serviceOrderId, @RequestBody ServiceOrderDTO serviceOrder) {
+    public ResponseEntity<ServiceResponseDTO> updateServiceOrder(@PathVariable Integer serviceOrderId, @RequestBody ServiceOrderDTO serviceOrderDTO) {
         return new ResponseEntity<>(ServiceResponseDTO.builder().meta(Map.of(MESSAGE, "ServiceOrder updated successfully"))
-        .data(ServiceOrderService.update(serviceOrderId, serviceOrder)).build(), HttpStatus.OK);
+        .data(serviceOrderService.update(serviceOrderId, serviceOrderDTO)).build(), HttpStatus.OK);
     }
 
     @DeleteMapping("/{serviceOrderId}")

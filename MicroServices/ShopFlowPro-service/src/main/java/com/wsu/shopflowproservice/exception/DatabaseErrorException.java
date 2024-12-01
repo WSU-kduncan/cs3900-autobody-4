@@ -1,4 +1,4 @@
-package com.wsu.workorderproservice.exception;
+package com.wsu.shopflowproservice.exception;
 
 public class DatabaseErrorException extends RuntimeException {
     public DatabaseErrorException(String message, Throwable e) {

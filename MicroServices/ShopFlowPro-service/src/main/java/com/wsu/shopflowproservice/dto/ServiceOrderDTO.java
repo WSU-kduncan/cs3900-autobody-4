@@ -1,9 +1,7 @@
 package com.wsu.shopflowproservice.dto;
 
 import java.util.Date;
-import java.util.Set;
 
-import com.wsu.shopflowproservice.model.ServiceOrderLineItem;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -19,13 +17,11 @@ import lombok.Setter;
 public class ServiceOrderDTO {
 
     private Integer serviceOrderId;
-    private String VIN;
+    private String vin;
     private Integer mechanicId;
-    private Integer serviceId;
     private Date dateRecieved;
     private Date dateCompleted;
     private String customerFirstName;
     private String customerLastName;
-    private Float serviceCost;
-    private Set<ServiceOrderLineItem> lineItems;
+    private Float totalCost;
 }

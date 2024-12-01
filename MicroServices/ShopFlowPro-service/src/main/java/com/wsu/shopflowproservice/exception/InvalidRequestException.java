@@ -1,4 +1,4 @@
-package com.wsu.workorderproservice.exception;
+package com.wsu.shopflowproservice.exception;
 
 public class InvalidRequestException extends RuntimeException {
 
