@@ -1,0 +1,14 @@
+<div class="service-order-details" *ngIf="serviceOrder">
+    <h2>Service Order Details</h2>
+    <div class="order-info">
+      <p><strong>Order ID:</strong> {{ serviceOrder.id }}</p>
+      <p><strong>Service ID:</strong> {{ serviceOrder.serviceId }}</p>
+      <p><strong>VIN:</strong> {{ serviceOrder.vin }}</p>
+      <p><strong>Customer:</strong> {{ serviceOrder.customer_first_name }} {{ serviceOrder.customer_last_name }}</p>
+      <p><strong>Date Received:</strong> {{ serviceOrder.date_received | date }}</p>
+    </div>
+  </div>
+  <div *ngIf="!serviceOrder">
+    <p>Service order not found.</p>
+  </div>
+  

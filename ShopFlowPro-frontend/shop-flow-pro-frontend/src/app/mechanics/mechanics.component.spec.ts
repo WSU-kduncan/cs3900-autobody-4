@@ -35,4 +35,12 @@ describe('MechanicsComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('.no-mechanics')?.textContent).toContain('No mechanics available');
   });
+
+  it('should call viewMechanicDetails when a mechanic is clicked', () => {
+    spyOn(component, 'viewMechanicDetails');
+    const button = fixture.nativeElement.querySelector('button');
+    button.click();
+    expect(component.viewMechanicDetails).toHaveBeenCalled();
+  });
+  
 });

@@ -1,21 +1,23 @@
 <div class="search-page">
-    <div class="content">
-      <h2>Search Service Orders</h2>
-      <div class="search-bar">
-        <input type="text" placeholder="Search by name, VIN, or service" />
-        <button>Search</button>
-      </div>
-      <div class="results">
-        <div class="result">
-          <div class="result-info">
-            <span>Order ID: 12345</span>
-            <span>Service ID: 6789</span>
-            <span>Customer: John Doe</span>
-          </div>
-          <button>View Details</button>
+  <div class="content">
+    <h2>Search Service Orders</h2>
+    <div class="search-bar">
+      <input type="text" [(ngModel)]="searchQuery" placeholder="Search by name, VIN, or service" />
+      <button (click)="onSearch()">Search</button>
+    </div>
+
+    <div class="results" *ngIf="searchResults.length > 0">
+      <div class="result" *ngFor="let order of searchResults">
+        <div class="result-info">
+          <span><strong>Order ID:</strong> {{ order.id }} </span>
+          <span><strong>Service ID:</strong> {{ order.serviceId }} </span>
+          <span><strong>Customer:</strong> {{ order.customer_first_name }} {{ order.customer_last_name }}</span>
         </div>
-        <!-- Add more results as needed -->
+        <button [routerLink]="['/service-order-details', order.id]" class="view-details-btn">View Details</button>
       </div>
     </div>
+    <div class="no-results" *ngIf="searchResults.length === 0">
+      <p>No results found</p>
+    </div>
   </div>
-  
+</div>

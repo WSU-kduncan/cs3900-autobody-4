@@ -23,4 +23,16 @@ describe('HomepageComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain('Welcome to ShopFlowPro');
   });
+
+  it('should call navigateToFeature method on button click', () => {
+    spyOn(component, 'navigateToFeature');
+    const button = fixture.nativeElement.querySelector('button');
+    button.click();
+    expect(component.navigateToFeature).toHaveBeenCalled();
+  });
+
+  it('should initialize feature list', () => {
+    expect(component.features.length).toBeGreaterThan(0);
+  });
+  
 });
