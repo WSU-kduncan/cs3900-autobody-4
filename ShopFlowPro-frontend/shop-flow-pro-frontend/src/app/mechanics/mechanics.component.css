@@ -1,27 +1,27 @@
 .mechanics-page {
-    margin-left: 250px; /* Adjusts for the fixed navbar width */
+    margin-left: 50px; /* Adjusts for the fixed navbar width */
     padding: 20px;
     font-family: Arial, sans-serif;
     background-color: #ecf0f1; /* Light gray background */
     min-height: 100vh;
   }
-  
+
   .content {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
   }
-  
+
   h2 {
     font-size: 2rem;
     margin-bottom: 20px;
     color: #34495e; /* Darker gray for titles */
   }
-  
+
   .mechanic-list {
     margin-top: 20px;
   }
-  
+
   .mechanic {
     display: flex;
     justify-content: space-between;
@@ -31,7 +31,7 @@
     margin-bottom: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   }
-  
+
   .mechanic button {
     background-color: #e74c3c; /* Red button */
     color: white;
@@ -41,19 +41,18 @@
     cursor: pointer;
     transition: background 0.3s ease;
   }
-  
+
   .mechanic button:hover {
     background-color: #c0392b; /* Darker red on hover */
   }
-  
+
   .mechanic-details {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  
+
   .mechanic-details span {
     font-size: 1rem;
     color: #34495e;
   }
-  

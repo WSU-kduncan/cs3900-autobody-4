@@ -12,24 +12,24 @@
     align-items: center;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
   }
-  
+
   .navbar h1 {
     font-size: 1.5rem;
     margin-bottom: 30px;
     text-transform: uppercase;
     text-align: center;
   }
-  
+
   .navbar ul {
     list-style: none;
     padding: 0;
     width: 100%;
   }
-  
+
   .navbar li {
     margin: 15px 0;
   }
-  
+
   .navbar a {
     text-decoration: none;
     color: white;
@@ -40,19 +40,18 @@
     transition: background-color 0.3s ease, transform 0.2s;
     text-align: center;
   }
-  
+
   .navbar a:hover {
     background-color: #1abc9c; /* Highlight color for hover */
     transform: scale(1.05); /* Slight scaling effect */
   }
-  
+
   .navbar a {
     color: #bdc3c7;
     text-decoration: none;
   }
-  
+
   .navbar a.active {
     color: #3498db; /* Blue for active links */
     font-weight: bold;
   }
-  
