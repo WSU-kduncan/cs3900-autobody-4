@@ -40,4 +40,18 @@ describe('SearchComponent', () => {
     const button = compiled.querySelector('button') as HTMLButtonElement;
     expect(button.disabled).toBe(true);
   });
+
+  it('should display search results', () => {
+    component.results = ['Result 1', 'Result 2'];
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelectorAll('li').length).toBe(2);
+  });
+
+  it('should call search method on input change', () => {
+    spyOn(component, 'search');
+    component.search('Query');
+    expect(component.search).toHaveBeenCalled();
+  });
+  
 });
