@@ -23,4 +23,16 @@ describe('HomepageComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain('Welcome to ShopFlowPro');
   });
+
+  it('should call a method correctly', () => {
+    spyOn(component, 'someMethod');
+    component.someMethod();
+    expect(component.someMethod).toHaveBeenCalled();
+  });
+
+  it('should render default content', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.textContent).toContain('Default content for Homepage');
+  });
+  
 });
