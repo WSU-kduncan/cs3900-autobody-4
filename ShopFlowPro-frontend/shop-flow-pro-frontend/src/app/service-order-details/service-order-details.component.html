@@ -6,9 +6,7 @@
       <p><strong>VIN:</strong> {{ serviceOrder.vin }}</p>
       <p><strong>Customer:</strong> {{ serviceOrder.customer_first_name }} {{ serviceOrder.customer_last_name }}</p>
       <p><strong>Date Received:</strong> {{ serviceOrder.date_received | date }}</p>
-      <p><strong>Service Cost:</strong> ${{ serviceOrder.service_cost }}</p>
     </div>
-    <button routerLink="/">Back to Homepage</button>
   </div>
   <div *ngIf="!serviceOrder">
     <p>Service order not found.</p>
