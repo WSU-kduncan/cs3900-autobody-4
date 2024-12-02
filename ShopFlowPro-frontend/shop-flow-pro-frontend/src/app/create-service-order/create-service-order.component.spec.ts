@@ -41,9 +41,16 @@ describe('CreateServiceOrderComponent', () => {
     expect(component.serviceOrderForm.valid).toBe(false);
   });
 
-  it('should call a method correctly', () => {
-    spyOn(component, 'someMethod');
-    component.someMethod();
-    expect(component.someMethod).toHaveBeenCalled();
+  it('should render form fields', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('input')).toBeTruthy();
+    expect(compiled.querySelector('button')).toBeTruthy();
+  });
+
+  it('should call submit method on form submission', () => {
+    spyOn(component, 'onSubmit');
+    const form = fixture.nativeElement.querySelector('form');
+    form.dispatchEvent(new Event('submit'));
+    expect(component.onSubmit).toHaveBeenCalled();
   });
 });
