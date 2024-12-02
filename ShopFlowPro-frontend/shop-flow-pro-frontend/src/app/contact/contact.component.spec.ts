@@ -23,4 +23,15 @@ describe('NavbarComponent', () => {
     const compiled = fixture.nativeElement;
     expect(compiled.querySelectorAll('a').length).toBeGreaterThan(0);
   });
+
+  it('should render default content', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.textContent).toContain('Default content for Contact');
+  });
+
+  it('should call a method correctly', () => {
+    spyOn(component, 'someMethod');
+    component.someMethod();
+    expect(component.someMethod).toHaveBeenCalled();
+  });
 });
