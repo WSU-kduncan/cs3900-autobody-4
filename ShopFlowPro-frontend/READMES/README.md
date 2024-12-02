@@ -2,23 +2,20 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
 
-## Development server
+## Required Install and Project Dependencies
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Install Node.js [Download](https://nodejs.org/en/download/prebuilt-installer)
+2. `npm install -g @angular/cli`
+3. `ng version` To verify install
+4. cd into the ShopFlowPro-frontend folder
+5. Run `npm install` to install all project dependencies.
+6. `ng serve`
+7. Navigate to http://localhost:4200/.
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Make sure all dependencies to support testing using Karma are uninstalled.
+2. Install Jest and dependencies related to Jest to run unit testing.
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+The command `npm test`
 
