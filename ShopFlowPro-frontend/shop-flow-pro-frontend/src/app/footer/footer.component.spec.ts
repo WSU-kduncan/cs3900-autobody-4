@@ -1,5 +1,5 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FooterComponent } from './footer.component';
 
 describe('FooterComponent', () => {
@@ -8,9 +8,8 @@ describe('FooterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FooterComponent]
-    })
-    .compileComponents();
+      declarations: [FooterComponent]
+    }).compileComponents();
 
     fixture = TestBed.createComponent(FooterComponent);
     component = fixture.componentInstance;
@@ -19,5 +18,18 @@ describe('FooterComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should render footer text', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('p')?.textContent).toContain('Footer Text');
+  });
+
+  it('should call a method when a link is clicked', () => {
+    spyOn(component, 'onLinkClick');
+    const compiled = fixture.nativeElement as HTMLElement;
+    const link = compiled.querySelector('a');
+    link?.dispatchEvent(new Event('click'));
+    expect(component.onLinkClick).toHaveBeenCalled();
   });
 });
