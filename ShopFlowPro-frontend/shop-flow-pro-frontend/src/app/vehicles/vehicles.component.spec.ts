@@ -23,4 +23,11 @@ describe('VehiclesComponent', () => {
     const compiled = fixture.nativeElement;
     expect(compiled.querySelectorAll('a').length).toBeGreaterThan(0);
   });
+
+  it('should display a list of vehicles', () => {
+    component.vehicles = ['Car 1', 'Car 2', 'Truck 1'];
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelectorAll('li').length).toBe(3);
+  });
 });
