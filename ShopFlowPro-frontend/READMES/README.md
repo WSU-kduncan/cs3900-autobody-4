@@ -17,5 +17,5 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 1. Make sure all dependencies to support testing using Karma are uninstalled.
 2. Install Jest and dependencies related to Jest to run unit testing.
 
-The command `npm test`
+The command `npm test` will run all test suites.
 
