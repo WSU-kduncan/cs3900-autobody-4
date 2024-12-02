@@ -18,4 +18,8 @@ export class HomepageComponent {
   ngOnInit() {
     this.todaysOrders = this.serviceOrderService.getOrders();
   }
+
+  navigateToFeature(feature: string): void {
+    console.log('Navigating to feature: ' + feature); // Example implementation
+  }
 }
