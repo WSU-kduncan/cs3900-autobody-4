@@ -23,4 +23,12 @@ describe('NavbarComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelectorAll('a').length).toBeGreaterThan(0);
   });
+
+  it('should render menu items', () => {
+    component.menuItems = ['Home', 'About', 'Contact'];
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelectorAll('a').length).toBe(3);
+  });
+  
 });
