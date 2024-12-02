@@ -1,25 +1,24 @@
 .about-us {
-    margin-left: 250px; /* Keep consistent with navbar */
+    margin-left: 50px; /* Keep consistent with navbar */
     padding: 20px;
     background-color: #ecf0f1;
     min-height: 100vh;
   }
-  
+
   .about-us .content {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
   }
-  
+
   .about-us h2 {
     font-size: 2rem;
     margin-bottom: 20px;
     color: #34495e;
   }
-  
+
   .about-us p {
     font-size: 1rem;
     color: #7f8c8d;
     margin-bottom: 20px;
   }
-  
