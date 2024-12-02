@@ -40,4 +40,10 @@ describe('CreateServiceOrderComponent', () => {
     });
     expect(component.serviceOrderForm.valid).toBe(false);
   });
+
+  it('should call a method correctly', () => {
+    spyOn(component, 'someMethod');
+    component.someMethod();
+    expect(component.someMethod).toHaveBeenCalled();
+  });
 });
