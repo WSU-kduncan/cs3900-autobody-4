@@ -58,7 +58,6 @@ public class ServiceOrderService {
         }
         try {
             return serviceOrderRepository.save(convertToEntity(serviceOrder));
-            
         } catch (Exception e) {
             log.error("Failed to update ServiceOrder. serviceOrderId:{}, Exception:{}", serviceOrderId, e);
             throw new DatabaseErrorException("Failed to update ServiceOrder", e);
