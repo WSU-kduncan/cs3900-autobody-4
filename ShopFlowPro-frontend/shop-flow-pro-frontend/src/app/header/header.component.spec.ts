@@ -15,16 +15,16 @@ describe('HeaderComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
-
+  // Verify component is created
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
+  // Check if title is correct
   it('should have a title', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain('Header Title');
   });
-
+  // Check if the event is emitted
   it('should emit an event on click', () => {
     spyOn(component.someEvent, 'emit');
     component.onButtonClick();

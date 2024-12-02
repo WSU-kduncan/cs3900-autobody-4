@@ -1,24 +1,24 @@
 .about-us {
-    margin-left: 50px; /* Keep consistent with navbar */
-    padding: 20px;
-    background-color: #ecf0f1;
-    min-height: 100vh;
+    margin-left: 50px; /* Aligns left with navbar */
+    padding: 20px; /* Add spacing inside */
+    background-color: #ecf0f1; /*light grey background */
+    min-height: 100vh; /* Full screen height */
   }
 
   .about-us .content {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
+    max-width: 800px; /* Limit width */
+    margin: 0 auto; /* Center content */
+    text-align: center; /* Center text */
   }
 
   .about-us h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #34495e;
+    font-size: 2rem; /* Large text */
+    margin-bottom: 20px; /* Space below */
+    color: #34495e; /* Dark color */
   }
 
   .about-us p {
-    font-size: 1rem;
-    color: #7f8c8d;
-    margin-bottom: 20px;
+    font-size: 1rem; /* Normal text size */
+    color: #7f8c8d; /* Grey color text */
+    margin-bottom: 20px; /* Add space below */
   }

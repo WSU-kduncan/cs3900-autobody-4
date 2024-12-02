@@ -14,11 +14,11 @@ describe('ContactComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
-
+  // Check if the component is created
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
+  // Check if the title is displayed correctly
   it('should display contact form title', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain('Contact Us');
