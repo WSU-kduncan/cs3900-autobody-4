@@ -57,21 +57,21 @@ CREATE TABLE vehicle (
 -- add FOREIGN KEY MakeID
 FOREIGN KEY (make_id) REFERENCES make(make_id)
 );
-DROP TABLE IF EXISTS shop_flow_pro.service;
+DROP TABLE IF EXISTS shop_flow_pro.services;
 -- Create Service table
-CREATE TABLE service (
+CREATE TABLE services (
     service_id INT PRIMARY KEY AUTO_INCREMENT,
     service_name VARCHAR(100) NOT NULL
 );
-INSERT INTO service (service_name) VALUES ('Tire Change');
-INSERT INTO service (service_name) VALUES ('Oil Change');
-INSERT INTO service (service_name) VALUES ('Tire Rotation');
-INSERT INTO service (service_name) VALUES ('Replace Battery');
-INSERT INTO service (service_name) VALUES ('Break Change');
-INSERT INTO service (service_name) VALUES ('Alignment');
-INSERT INTO service (service_name) VALUES ('Air Filter Replacement');
-INSERT INTO service (service_name) VALUES ('Transmission Fluid');
-INSERT INTO service (service_name) VALUES ('Timing Belt Replacement');
+INSERT INTO services (service_name) VALUES ('Tire Change');
+INSERT INTO services (service_name) VALUES ('Oil Change');
+INSERT INTO services (service_name) VALUES ('Tire Rotation');
+INSERT INTO services (service_name) VALUES ('Replace Battery');
+INSERT INTO services (service_name) VALUES ('Break Change');
+INSERT INTO services (service_name) VALUES ('Alignment');
+INSERT INTO services (service_name) VALUES ('Air Filter Replacement');
+INSERT INTO services (service_name) VALUES ('Transmission Fluid');
+INSERT INTO services (service_name) VALUES ('Timing Belt Replacement');
 
 DROP TABLE IF EXISTS shop_flow_pro.service_order;
 -- Create ServiceOrder table
