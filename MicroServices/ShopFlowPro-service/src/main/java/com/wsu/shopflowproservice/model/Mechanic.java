@@ -21,7 +21,7 @@ import java.util.Set;
 @Getter
 @Setter
 @Builder
-@Table(name = "Mechanic")
+@Table(name = "mechanic")
 public class Mechanic {
 
     @Id
