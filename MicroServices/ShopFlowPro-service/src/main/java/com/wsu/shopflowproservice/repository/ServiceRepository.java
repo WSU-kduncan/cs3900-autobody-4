@@ -1,10 +1,12 @@
-package com.wsu.workorderproservice.repository;
+package com.wsu.shopflowproservice.repository;
 
-import com.wsu.workorderproservice.model.Service;
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.wsu.shopflowproservice.model.ServiceType;
+
 import java.util.List;
 
-public interface ServiceRepository extends JpaRepository<Service, String> {
+public interface ServiceRepository extends JpaRepository<ServiceType, Integer> {
 
-    List<Service> findByActive(boolean active);
+    List<ServiceType> findByActive(boolean active);
 }

@@ -1,4 +1,4 @@
-package com.wsu.workorderproservice.dto;
+package com.wsu.shopflowproservice.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

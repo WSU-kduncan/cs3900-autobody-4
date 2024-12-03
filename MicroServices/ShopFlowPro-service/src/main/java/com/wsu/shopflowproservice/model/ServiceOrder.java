@@ -1,18 +1,13 @@
 package com.wsu.shopflowproservice.model;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -37,8 +32,8 @@ public class ServiceOrder {
     @Column(name = "service_order_id")
     private Integer serviceOrderId;
     @Column(name = "vin")
-    private String VIN;
-    @Column(name = "mid")
+    private String vin;
+    @Column(name = "mechanic_id")
     private Integer mechanicId;
     @Column(name = "date_recieved")
     private Date dateRecieved;
@@ -55,4 +50,5 @@ public class ServiceOrder {
     @JoinColumn(name = "service_id"))
     @ManyToMany
     private Set<ServiceType> lineItems;
+    
 }

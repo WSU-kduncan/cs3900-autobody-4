@@ -5,6 +5,11 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class ServiceOrderService {
+
+
+  constructor(private http: HttpClient) {
+
+  }
   private orders = [
     { 
       id: 12345, 
@@ -28,6 +33,13 @@ export class ServiceOrderService {
 
   // Method to get the orders
   getOrders() {
+    this.http.get("").subscribe({
+      next:(res: any) => {
+        this.orders = res.orders
+      }, error: (error) => {
+        console.error(error)
+      }
+    })
     return this.orders;
   }
 

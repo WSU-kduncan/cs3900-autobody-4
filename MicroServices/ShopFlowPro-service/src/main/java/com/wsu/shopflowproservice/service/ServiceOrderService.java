@@ -76,16 +76,18 @@ public class ServiceOrderService {
             log.error("Failed to delete ServiceOrder. serviceOrderId:{}, Exception:{}", serviceOrderId, e);
             throw new DatabaseErrorException("Failed to delete ServiceOrder", e);
         }
+    }
 
         private ServiceOrder convertToEntity(ServiceOrderDTO serviceOrderDTO) {
             return ServiceOrder.builder().mechanicId(serviceOrderDTO.getMechanicId())
             .customerFirstName(serviceOrderDTO.getCustomerFirstName())
            .customerLastName(serviceOrderDTO.getCustomerLastName())
-           .VIN(serviceOrderDTO.getVin())
+           .vin(serviceOrderDTO.getVin())
             .dateCompleted(serviceOrderDTO.getDateCompleted())
             .dateRecieved(serviceOrderDTO.getDateRecieved())
            .totalCost(serviceOrderDTO.getTotalCost()).lineItems(serviceOrderDTO.getLineItems()).build();
         
     }
+
 
 }

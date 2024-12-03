@@ -7,14 +7,12 @@ import com.wsu.shopflowproservice.model.Mechanic;
 import com.wsu.shopflowproservice.repository.MechanicRepository;
 import com.wsu.shopflowproservice.utilities.CommonUtils;
 
-import io.micrometer.core.instrument.Meter.Id;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
-import java.util.Map;
 
 @Service
 @RequiredArgsConstructor
@@ -36,7 +34,7 @@ public class MechanicService {
         try {
             Page<Object[]> mechanics = mechanicRepository.findBySearch(search, PageRequest.of(page - 1, rpp, CommonUtils.sort(sortField, sortOrder)));
             return mechanics.map(mechanic -> MechanicDTO.builder()
-                    .mechanicId((Id) mechanic[0])
+                    .mechanicId((String) mechanic[0])
                     .firstName((String) mechanic[1])
                     .lastName((String) mechanic[2])
                     .specialization((String) mechanic[3])
@@ -59,7 +57,7 @@ public class MechanicService {
         }
         try {
             Mechanic mechanic = mapToEntity(mechanicDTO);
-            mechanic.setMechanicId(mechanicDTO.getMechanId());
+            mechanic.setMechanicId(mechanicDTO.getMechanicId());
             return mapToDto(mechanicRepository.save(mechanic));
         } catch (Exception e) {
             log.error("Failed to add mechanic. mechanic Id: {}, Exception: {}", mechanicDTO.getMechanicId(), e);
@@ -73,7 +71,7 @@ public class MechanicService {
      * @param mechanicDTO - the details to update
      * @return - the updated mechanic entity
      **/
-    public Mechanic update(Integer mechanicId, MechanicDTO mechanicDTO) {
+    public Mechanic update(String mechanicId, MechanicDTO mechanicDTO) {
         if (!mechanicRepository.existsById(mechanicId)) {
             throw new InvalidRequestException("Invalid mechanic code.");
         }
@@ -91,7 +89,7 @@ public class MechanicService {
      * Deletes a mechanic by its code.
      * @param id - the code of the mechanic to delete
      **/
-    public void delete(Integer id) {
+    public void delete(String id) {
         if (!mechanicRepository.existsById(id)) {
             throw new InvalidRequestException("Invalid mechanic Id.");
         }
