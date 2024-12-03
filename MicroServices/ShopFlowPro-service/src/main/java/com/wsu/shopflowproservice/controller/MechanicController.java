@@ -53,7 +53,7 @@ public class MechanicController {
      **/
     @PostMapping
     public ResponseEntity<ServiceResponseDTO> save(@RequestBody @Valid MechanicDTO mechanicDTO) {
-        if (!StringUtils.hasLength(mechanicDTO.getId())) {
+        if (!StringUtils.hasLength(mechanicDTO.getmechanicId())) {
             throw new InvalidRequestException("Mechanic code must be provided.");
         }
         return new ResponseEntity<>(ServiceResponseDTO.builder()

@@ -26,7 +26,7 @@ public class Mechanic {
 
     @Id
     @Column(name = "mechanic_id")
-    private Integer mechanicId;
+    private String mechanicId;
 
     @Column(name = "mechanic_first_name", nullable = false)
     private String firstName;
