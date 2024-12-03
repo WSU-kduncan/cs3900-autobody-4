@@ -6,10 +6,10 @@ USE shop_flow_pro;
 DROP TABLE IF EXISTS shop_flow_pro.mechanic;
 -- Create Mechanic table
 CREATE TABLE mechanic (
-    mid INT AUTO_INCREMENT NOT NULL,
+    mechanic_id INT AUTO_INCREMENT NOT NULL,
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL,
-    PRIMARY KEY (mid)
+    PRIMARY KEY (mechanic_id)
 );
 INSERT INTO shop_flow_pro.mechanic (first_name, last_name) VALUES ('Alex', 'Smith');
 INSERT INTO shop_flow_pro.mechanic (first_name, last_name) VALUES ('Jamie', 'Johnson');
