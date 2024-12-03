@@ -88,7 +88,7 @@ CREATE TABLE service_order (
 -- Create the foreign keys VIN, MID, and Service ID
     FOREIGN KEY (vin) REFERENCES vehicle(vin),
     FOREIGN KEY (mechanic_id) REFERENCES mechanic(mechanic_id),
-    FOREIGN KEY (service_id) REFERENCES service(service_id)
+    FOREIGN KEY (service_id) REFERENCES services(service_id)
 );
 
 -- Create serviceOrderLineItem
