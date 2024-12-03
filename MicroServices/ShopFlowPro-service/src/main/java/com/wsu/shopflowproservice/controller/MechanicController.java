@@ -68,7 +68,7 @@ public class MechanicController {
      * @return - HTTP status with the updated mechanic DTO
      **/
     @PutMapping("/{mechanicId}")
-    public ResponseEntity<ServiceResponseDTO> update(@PathVariable Integer mechanicId,
+    public ResponseEntity<ServiceResponseDTO> update(@PathVariable String mechanicId,
                                                      @RequestBody @Valid MechanicDTO mechanicDTO) {
         return new ResponseEntity<>(ServiceResponseDTO.builder()
                 .meta(Map.of(MESSAGE, "Mechanic updated successfully"))
