@@ -7,15 +7,15 @@ DROP TABLE IF EXISTS shop_flow_pro.mechanic;
 -- Create Mechanic table
 CREATE TABLE mechanic (
     mechanic_id INT AUTO_INCREMENT NOT NULL,
-    first_name VARCHAR(50) NOT NULL,
-    last_name VARCHAR(50) NOT NULL,
+    mechanic_first_name VARCHAR(50) NOT NULL,
+    mechanic_last_name VARCHAR(50) NOT NULL,
     PRIMARY KEY (mechanic_id)
 );
-INSERT INTO shop_flow_pro.mechanic (first_name, last_name) VALUES ('Alex', 'Smith');
-INSERT INTO shop_flow_pro.mechanic (first_name, last_name) VALUES ('Jamie', 'Johnson');
-INSERT INTO shop_flow_pro.mechanic (first_name, last_name) VALUES ('Taylor', 'Brown');
-INSERT INTO shop_flow_pro.mechanic (first_name, last_name) VALUES ('Morgan', 'Davis');
-INSERT INTO shop_flow_pro.mechanic (first_name, last_name) VALUES ('Casey', 'Wilson');
+INSERT INTO shop_flow_pro.mechanic (mechanic_first_name,  mechanic_last_name) VALUES ('Alex', 'Smith');
+INSERT INTO shop_flow_pro.mechanic (mechanic_first_name,  mechanic_last_name) VALUES ('Jamie', 'Johnson');
+INSERT INTO shop_flow_pro.mechanic (mechanic_first_name,  mechanic_last_name) VALUES ('Taylor', 'Brown');
+INSERT INTO shop_flow_pro.mechanic (mechanic_first_name,  mechanic_last_name) VALUES ('Morgan', 'Davis');
+INSERT INTO shop_flow_pro.mechanic (mechanic_first_name,  mechanic_last_name) VALUES ('Casey', 'Wilson');
 
 
 DROP TABLE IF EXISTS shop_flow_pro.make;
