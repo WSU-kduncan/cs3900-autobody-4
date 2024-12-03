@@ -9,7 +9,8 @@
       <h3>Today's Service Orders</h3>
       <div class="order" *ngFor="let order of todaysOrders">
         <p>Order ID: {{ order.id }} - Service ID: {{ order.serviceId }} - Customer: {{ order.customer_first_name }} {{ order.customer_last_name }} - VIN: {{ order.vin }}</p>
-        <a [href]="'#view-order-' + order.id"><button>View Details</button></a>
+        <button [routerLink]="['/service-order-details', order.id]">View Details</button>
+
       </div>
     </div>
     <div class="footer">
@@ -18,3 +19,4 @@
     </div>
   </div>
 </div>
+

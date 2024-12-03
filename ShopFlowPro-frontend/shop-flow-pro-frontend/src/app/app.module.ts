@@ -5,6 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   imports: [
     ReactiveFormsModule,
+    NgModule,
     // other modules
   ],
   // other configurations

@@ -10,6 +10,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -27,31 +29,30 @@ import java.util.Set;
 @Getter
 @Setter
 @Builder
-@Table(name = "ServiceOrder")
+@Table(name = "service_order")
 public class ServiceOrder {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ServiceOrderID")
+    @Column(name = "service_order_id")
     private Integer serviceOrderId;
-    @Column(name = "VIN")
+    @Column(name = "vin")
     private String VIN;
-    @Column(name = "MID")
+    @Column(name = "mid")
     private Integer mechanicId;
-    @Column(name = "ServiceID")
-    private Integer serviceId;
-    @Column(name = "DateRecieved")
+    @Column(name = "date_recieved")
     private Date dateRecieved;
-    @Column(name = "DateCompleted")
+    @Column(name = "date_completed")
     private Date dateCompleted;
-    @Column(name = "CustomerFirstName")
+    @Column(name = "customer_first_name")
     private String customerFirstName;
-    @Column(name = "CustomerLastName")
+    @Column(name = "customer_last_name")
     private String customerLastName;
-    @Column(name = "ServiceCost")
-    private Float serviceCost;
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "serviceOrderID", updatable = false)
-    private Set<ServiceOrderLineItem> lineItems;
-
+    @Column(name = "service_cost")
+    private Float totalCost;
+    @JoinTable(name = "service_order_line_item", joinColumns =
+    @JoinColumn(name = "service_order_id"), inverseJoinColumns =
+    @JoinColumn(name = "service_id"))
+    @ManyToMany
+    private Set<ServiceType> lineItems;
 }

@@ -1,5 +1,5 @@
 .create-service-order {
-    margin-left: 250px; /* Adjust for the fixed navbar width */
+    display: flex; 
     padding: 20px;
     font-family: Arial, sans-serif;
     background-color: #ecf0f1; /* Light gray background */
@@ -62,4 +62,6 @@
     background-color: #bdc3c7; /* Grey out disabled button */
     cursor: not-allowed;
   }
+  
+
   

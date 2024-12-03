@@ -12,7 +12,6 @@ import com.wsu.shopflowproservice.exception.InvalidRequestException;
 
 import com.wsu.shopflowproservice.dto.ServiceOrderDTO;
 import com.wsu.shopflowproservice.model.ServiceOrder;
-import com.wsu.shopflowproservice.model.ServiceOrderLineItem;
 import com.wsu.shopflowproservice.repository.ServiceOrderRepository;
 
 import jakarta.transaction.Transactional;
@@ -43,12 +42,8 @@ public class ServiceOrderService {
     @Transactional(rollbackOn = Exception.class)
     public ServiceOrder add(ServiceOrderDTO serviceOrder) {
         try {
-            Set<ServiceOrderLineItem> lineItems = serviceOrder.getLineItems();
-            serviceOrder.setLineItems(null);
-            ServiceOrder serviceOrderResp = serviceOrderRepository.save(serviceOrder);
-            lineItems.forEach(lineItem -> lineItem.setServiceOrderId(serviceOrderResp.getServiceOrderId()));
-            serviceOrderResp.setLineItems(lineItems);
-            return serviceOrderRepository.save(serviceOrderResp);
+            serviceOrder.setDateRecieved(new Date());
+            return serviceOrderRepository.save(convertToEntity(serviceOrder));
         } catch (Exception e) {
             log.error("Failed to add ServiceOrder. Exception: ", e);
             throw new DatabaseErrorException("Failed to add new ServiceOrder", e);
@@ -62,12 +57,7 @@ public class ServiceOrderService {
             throw new InvalidRequestException("Invalid ServiceOrder Id");
         }
         try {
-            serviceOrder.setServiceOrderId(serviceOrderResp.get().getServiceOrderId());
-            serviceOrder.setDateCompleted(new Date());
-            if (!CollectionUtils.isEmpty(serviceOrder.getLineItems())) {
-                serviceOrder.getLineItems().forEach(lineItem -> lineItem.setServiceOrderId(serviceOrder.getServiceOrderId()));
-            }
-            return serviceOrderRepository.save(serviceOrder);
+            return serviceOrderRepository.save(convertToEntity(serviceOrder));
         } catch (Exception e) {
             log.error("Failed to update ServiceOrder. serviceOrderId:{}, Exception:{}", serviceOrderId, e);
             throw new DatabaseErrorException("Failed to update ServiceOrder", e);
@@ -86,6 +76,16 @@ public class ServiceOrderService {
             log.error("Failed to delete ServiceOrder. serviceOrderId:{}, Exception:{}", serviceOrderId, e);
             throw new DatabaseErrorException("Failed to delete ServiceOrder", e);
         }
+
+        private ServiceOrder convertToEntity(ServiceOrderDTO serviceOrderDTO) {
+            return ServiceOrder.builder().mechanicId(serviceOrderDTO.getMechanicId())
+            .customerFirstName(serviceOrderDTO.getCustomerFirstName())
+           .customerLastName(serviceOrderDTO.getCustomerLastName())
+           .VIN(serviceOrderDTO.getVin())
+            .dateCompleted(serviceOrderDTO.getDateCompleted())
+            .dateRecieved(serviceOrderDTO.getDateRecieved())
+           .totalCost(serviceOrderDTO.getTotalCost()).lineItems(serviceOrderDTO.getLineItems()).build();
+        
     }
 
 }

@@ -1,21 +1,21 @@
 .app-header {
-  background-color: #ecf0f1;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  text-align: center;
-  border-bottom: 1px solid black;
-  margin-top: 0;
+  background-color: #ecf0f1; /* Set light gray background */
+  padding-top: 10px; /* Space above content */
+  padding-bottom: 10px; /* Space below content */
+  text-align: center; /* Center content horizontally */
+  border-bottom: 1px solid black; /* Add black line below */
+  margin-top: 0; /* No space above */
 }
 .app-header h1 {
-  margin: 0;
-  font-size: 24px;
-  color: black;
+  margin: 0; /* No extra space around */
+  font-size: 24px; /* Set text size for h1 */
+  color: black; /* Set text color */
 }
 .app-header p {
-  font-size: 18px;
-  margin: 0;
-  color: black;
-  text-align: center;
-  font-weight: bold;
-  font-family: "Times New Roman", Times, serif;
+  font-size: 18px; /* Set text size for paragraph */
+  margin: 0; /* No extra space around */
+  color: black; /* Set text color */
+  text-align: center; /* Center text */
+  font-weight: bold; /* Make text bold */
+  font-family: "Times New Roman", Times, serif; /* Set font style to Times New Roman */
 }
