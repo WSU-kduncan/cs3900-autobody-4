@@ -14,7 +14,7 @@ import lombok.Setter;
 @Builder
 public class MechanicDTO {
 
-    private Integer id;
+    private String mechanicId;
 
     @NotBlank(message = "First Name must not be null or blank")
     private String firstName;

@@ -6,10 +6,10 @@ USE shop_flow_pro;
 DROP TABLE IF EXISTS shop_flow_pro.mechanic;
 -- Create Mechanic table
 CREATE TABLE mechanic (
-    mid INT AUTO_INCREMENT NOT NULL,
+    mechanic_id INT AUTO_INCREMENT NOT NULL,
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL,
-    PRIMARY KEY (mid)
+    PRIMARY KEY (mechanic_id)
 );
 INSERT INTO shop_flow_pro.mechanic (first_name, last_name) VALUES ('Alex', 'Smith');
 INSERT INTO shop_flow_pro.mechanic (first_name, last_name) VALUES ('Jamie', 'Johnson');
@@ -39,11 +39,11 @@ INSERT INTO shop_flow_pro.make (make_name) VALUES ('Hyundai');
 -- Create Mechanic-to-Make table (junction table)
 DROP TABLE IF EXISTS shop_flow_pro.mechanic_to_make;
 CREATE TABLE mechanic_to_make (
-    mid INT,
+    mechanic_id INT,
     make_id INT,
-    PRIMARY KEY (mid, make_id),
+    PRIMARY KEY (mechanic_id, make_id),
 -- Add foreign Keys MID and MakeID
-    FOREIGN KEY (mid) REFERENCES mechanic(mid),
+    FOREIGN KEY (mechanic_id) REFERENCES mechanic(mechanic_id),
     FOREIGN KEY (make_id) REFERENCES make(make_id)
 );
 DROP TABLE IF EXISTS shop_flow_pro.vehicle;
@@ -78,7 +78,7 @@ DROP TABLE IF EXISTS shop_flow_pro.service_order;
 CREATE TABLE service_order (
     service_order_id INT PRIMARY KEY AUTO_INCREMENT,
     vin VARCHAR(17),
-    mid INT,
+    mechanic_id INT,
     service_id INT,
     date_recieved DATETIME NOT NULL,
     date_completed DATETIME NULL,
@@ -87,7 +87,7 @@ CREATE TABLE service_order (
     service_cost DECIMAL(10, 2) NOT NULL,
 -- Create the foreign keys VIN, MID, and Service ID
     FOREIGN KEY (vin) REFERENCES vehicle(vin),
-    FOREIGN KEY (mid) REFERENCES mechanic(mid),
+    FOREIGN KEY (mechanic_id) REFERENCES mechanic(mechanic_id),
     FOREIGN KEY (service_id) REFERENCES service(service_id)
 );
 
