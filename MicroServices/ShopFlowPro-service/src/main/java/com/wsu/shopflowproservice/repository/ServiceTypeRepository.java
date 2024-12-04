@@ -8,5 +8,4 @@ import java.util.List;
 
 public interface ServiceTypeRepository extends JpaRepository<ServiceType, Integer> {
 
-    List<ServiceType> findByActive(boolean active);
 }

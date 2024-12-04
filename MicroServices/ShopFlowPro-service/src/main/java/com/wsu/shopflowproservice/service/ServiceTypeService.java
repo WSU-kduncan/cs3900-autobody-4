@@ -20,13 +20,9 @@ public class ServiceTypeService {
     private final ServiceTypeRepository serviceRepository;
 
     public List<ServiceTypeDTO> get(Integer serviceID) {
+            return null;
         
     }
 
-    public List<ServiceTypeDTO> mapToDTO(List<Service> services) {
-        if (CollectionUtils.isEmpty(services)) {
-            return Collections.emptyList();
-        }
-        return services.stream().map(service -> ServiceTypeDTO.builder().serviceID(service.getServiceId()).serviceName(service.getServicename()).active(service.isActive()).build()).collect(Collectors.toList());
-    }
+   
 }
