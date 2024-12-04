@@ -33,6 +33,7 @@ export class ServiceOrderService {
 
   // Method to get the orders
   getOrders() {
+    /** 
     this.http.get("").subscribe({
       next:(res: any) => {
         this.orders = res.orders
@@ -40,6 +41,7 @@ export class ServiceOrderService {
         console.error(error)
       }
     })
+    */
     return this.orders;
   }
 
