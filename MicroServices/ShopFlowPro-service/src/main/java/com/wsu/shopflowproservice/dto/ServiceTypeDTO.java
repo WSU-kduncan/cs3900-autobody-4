@@ -12,7 +12,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Builder
 
-public class ServiceDTO {
+public class ServiceTypeDTO {
     private String serviceName;
     private int serviceID;
 }

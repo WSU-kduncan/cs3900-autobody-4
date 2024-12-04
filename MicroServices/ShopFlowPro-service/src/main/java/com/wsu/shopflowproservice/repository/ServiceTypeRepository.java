@@ -6,7 +6,7 @@ import com.wsu.shopflowproservice.model.ServiceType;
 
 import java.util.List;
 
-public interface ServiceRepository extends JpaRepository<ServiceType, Integer> {
+public interface ServiceTypeRepository extends JpaRepository<ServiceType, Integer> {
 
     List<ServiceType> findByActive(boolean active);
 }
