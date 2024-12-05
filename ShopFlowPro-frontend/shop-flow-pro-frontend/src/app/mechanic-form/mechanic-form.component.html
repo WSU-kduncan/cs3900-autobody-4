@@ -1,0 +1,24 @@
+<div class="mechanic-form">
+    <h2>{{ isEditMode ? 'Edit Mechanic' : 'Add New Mechanic' }}</h2>
+    <form (ngSubmit)="saveMechanic()">
+      <div>
+        <label for="mechanic_first_name">First Name:</label>
+        <input type="text" id="mechanic_first_name" [(ngModel)]="mechanic.mechanic_first_name" name="mechanic_first_name" required />
+      </div>
+      <div>
+        <label for="mechanic_last_name">Last Name:</label>
+        <input type="text" id="mechanic_last_name" [(ngModel)]="mechanic.mechanic_last_name" name="mechanic_last_name" required />
+      </div>
+  
+      <div *ngIf="isEditMode">
+        <label for="mechanic_id">Mechanic ID:</label>
+        <input type="text" id="mechanic_id" [(ngModel)]="mechanic.mechanic_id" name="mechanic_id" disabled />
+      </div>
+  
+      <div>
+        <button type="submit">{{ isEditMode ? 'Update Mechanic' : 'Add Mechanic' }}</button>
+        <button type="button" (click)="cancel()">Cancel</button>
+      </div>
+    </form>
+  </div>
+  

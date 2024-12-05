@@ -1,0 +1,91 @@
+.homepage {
+    margin-left: 50px; /* Adjusts for the fixed navbar width */
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #ecf0f1; /* Light gray background */
+    min-height: 100vh;
+  }
+
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #34495e; /* Darker gray for titles */
+  }
+
+  .buttons button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db; /* Blue buttons */
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .buttons button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+  }
+
+  .service-orders {
+    margin: 20px 0;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px 15px 0 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  .service-orders h3{
+    margin: 0;
+    border-bottom: black solid 1px;
+    width: 100%;
+    padding: 0;
+  }
+  .order {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    border-bottom: 1px solid #ddd; /* Divider between orders */
+  }
+  .order p{
+    margin: 10px;
+  }
+  .order:last-child {
+    border-bottom: none;
+  }
+
+  .order button {
+    background-color: #e74c3c; /* Red button */
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .order button:hover {
+    background-color: #c0392b; /* Darker red on hover */
+  }
+
+  .footer button {
+    margin: 10px;
+    background-color: #2ecc71; /* Green buttons */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .footer button:hover {
+    background-color: #27ae60; /* Darker green on hover */
+  }

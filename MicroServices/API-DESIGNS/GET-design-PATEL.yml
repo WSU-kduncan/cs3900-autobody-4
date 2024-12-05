@@ -1,183 +1,298 @@
-openapi: 3.0.0
 info:
+  description: API to manage mechanics, vehicles, services, and service orders in
+    a shop flow system.
   title: Shop Flow PRO API
   version: 1.0.0
-  description: API to manage mechanics, vehicles, services, and service orders in a shop flow system.
-
+openapi: 3.0.0
 paths:
-  /mechanics:
-    get:
-      summary: Get a list of mechanics
-      responses:
-        200:
-          description: A list of mechanics
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    MID:
-                      type: integer
-                      example: 1
-                    FirstName:
-                      type: string
-                      example: Alex
-                    LastName:
-                      type: string
-                      example: Smith
-
-  /mechanics/{id}:
-    get:
-      summary: Get a mechanic by ID
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: integer
-            example: 1
-      responses:
-        200:
-          description: Details of a mechanic
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  MID:
-                    type: integer
-                    example: 1
-                  FirstName:
-                    type: string
-                    example: Alex
-                  LastName:
-                    type: string
-                    example: Smith
-
   /makes:
     get:
-      summary: Get a list of vehicle makes
       responses:
         200:
-          description: A list of vehicle makes
           content:
             application/json:
               schema:
-                type: array
                 items:
-                  type: object
                   properties:
                     MakeID:
-                      type: integer
                       example: 1
+                      type: integer
                     MakeName:
-                      type: string
                       example: Toyota
-
-  /vehicles:
+                      type: string
+                  type: object
+                type: array
+          description: A list of vehicle makes
+      summary: Get a list of vehicle makes
+  /mechanics:
     get:
-      summary: Get a list of vehicles
       responses:
         200:
-          description: A list of vehicles
           content:
             application/json:
               schema:
-                type: array
                 items:
-                  type: object
                   properties:
-                    VIN:
-                      type: number
-                      example: 12345678901234567
-                    MakeID:
-                      type: integer
-                      example: 1
-                    Model:
+                    FirstName:
+                      example: Alex
                       type: string
-                      example: Corolla
-                    Year:
-                      type: integer
-                      example: 2020
-                    Description:
+                    LastName:
+                      example: Smith
                       type: string
-                      example: "A sedan in good condition."
-
-  /services:
-    get:
-      summary: Get a list of services
-      responses:
-        200:
-          description: A list of services
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    ServiceID:
-                      type: integer
-                      example: 1
-                    ServiceName:
-                      type: string
-                      example: Tire Change
-
-  /serviceorders:
-    get:
-      summary: Get a list of service orders
-      responses:
-        200:
-          description: A list of service orders
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    ServiceOrderID:
-                      type: integer
-                      example: 1
-                    VIN:
-                      type: number
-                      example: 12345678901234567
                     MID:
-                      type: integer
                       example: 1
-                    ServiceID:
                       type: integer
-                      example: 1
-                    DateRecieved:
-                      type: string
-                      format: date-time
-                      example: '2024-10-17T09:00:00Z'
-                    DateCompleted:
-                      type: string
-                      format: date-time
-                      example: '2024-10-18T15:00:00Z'
+                  type: object
+                type: array
+          description: A list of mechanics
+      summary: Get a list of mechanics
+  /mechanics/{id}:
+    get:
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          example: 1
+          type: integer
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                properties:
+                  FirstName:
+                    example: Alex
+                    type: string
+                  LastName:
+                    example: Smith
+                    type: string
+                  MID:
+                    example: 1
+                    type: integer
+                type: object
+          description: Details of a mechanic
+      summary: Get a mechanic by ID
+  /mechanics/{mid}:
+    get:
+      parameters:
+      - in: path
+        name: mid
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  FirstName:
+                    type: string
+                  LastName:
+                    type: string
+                  MID:
+                    type: integer
+                type: object
+          description: Mechanic details
+        '404':
+          description: Mechanic not found
+      summary: Get a mechanic by ID
+  /service-orders:
+    get:
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  properties:
                     CustomerFName:
                       type: string
-                      example: John
                     CustomerLName:
                       type: string
-                      example: Doe
+                    DateCompleted:
+                      format: date-time
+                      type: string
+                    DateRecieved:
+                      format: date-time
+                      type: string
+                    MID:
+                      type: integer
                     ServiceCost:
-                      type: number
                       format: decimal
+                      type: number
+                    ServiceID:
+                      type: integer
+                    ServiceOrderID:
+                      type: integer
+                    VIN:
+                      format: decimal
+                      type: number
+                  type: object
+                type: array
+          description: A list of service orders
+      summary: Get a list of service orders
+  /service-orders/{serviceOrderId}:
+    get:
+      parameters:
+      - in: path
+        name: serviceOrderId
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  CustomerFName:
+                    type: string
+                  CustomerLName:
+                    type: string
+                  DateCompleted:
+                    format: date-time
+                    type: string
+                  DateRecieved:
+                    format: date-time
+                    type: string
+                  MID:
+                    type: integer
+                  ServiceCost:
+                    format: decimal
+                    type: number
+                  ServiceID:
+                    type: integer
+                  ServiceOrderID:
+                    type: integer
+                  VIN:
+                    format: decimal
+                    type: number
+                type: object
+          description: Service order details
+        '404':
+          description: Service order not found
+      summary: Get a service order by ID
+  /serviceorders:
+    get:
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  properties:
+                    CustomerFName:
+                      example: John
+                      type: string
+                    CustomerLName:
+                      example: Doe
+                      type: string
+                    DateCompleted:
+                      example: '2024-10-18T15:00:00Z'
+                      format: date-time
+                      type: string
+                    DateRecieved:
+                      example: '2024-10-17T09:00:00Z'
+                      format: date-time
+                      type: string
+                    MID:
+                      example: 1
+                      type: integer
+                    ServiceCost:
                       example: 150.75
-
+                      format: decimal
+                      type: number
+                    ServiceID:
+                      example: 1
+                      type: integer
+                    ServiceOrderID:
+                      example: 1
+                      type: integer
+                    VIN:
+                      example: 12345678901234567
+                      type: number
+                  type: object
+                type: array
+          description: A list of service orders
+      summary: Get a list of service orders
+  /services:
+    get:
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  properties:
+                    ServiceID:
+                      type: integer
+                    ServiceName:
+                      type: string
+                  type: object
+                type: array
+          description: A list of services
+      summary: Get a list of services
+  /services/{serviceId}:
+    get:
+      parameters:
+      - in: path
+        name: serviceId
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  ServiceID:
+                    type: integer
+                  ServiceName:
+                    type: string
+                type: object
+          description: Service details
+        '404':
+          description: Service not found
+      summary: Get a service by ID
+  /vehicles:
+    get:
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  properties:
+                    Description:
+                      example: A sedan in good condition.
+                      type: string
+                    MakeID:
+                      example: 1
+                      type: integer
+                    Model:
+                      example: Corolla
+                      type: string
+                    VIN:
+                      example: 12345678901234567
+                      type: number
+                    Year:
+                      example: 2020
+                      type: integer
+                  type: object
+                type: array
+          description: A list of vehicles
+      summary: Get a list of vehicles
 tags:
-  - name: Mechanics
-    description: API to manage mechanics.
-  - name: Makes
-    description: API to manage vehicle makes.
-  - name: Vehicles
-    description: API to manage vehicles.
-  - name: Services
-    description: API to manage services.
-  - name: ServiceOrders
-    description: API to manage service orders.
-
+- description: API to manage mechanics.
+  name: Mechanics
+- description: API to manage vehicle makes.
+  name: Makes
+- description: API to manage vehicles.
+  name: Vehicles
+- description: API to manage services.
+  name: Services
+- description: API to manage service orders.
+  name: ServiceOrders
