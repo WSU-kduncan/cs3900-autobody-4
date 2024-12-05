@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.wsu.shopflowproservice.dto.ServiceTypeDTO;
 import com.wsu.shopflowproservice.exception.DatabaseErrorException;
+import com.wsu.shopflowproservice.model.ServiceType;
 import com.wsu.shopflowproservice.repository.ServiceTypeRepository;
 
 @Service
@@ -20,9 +21,33 @@ public class ServiceTypeService {
     private final ServiceTypeRepository serviceRepository;
 
     public List<ServiceTypeDTO> get(Integer serviceID) {
-            return null;
+    try {
+        // Fetch matching services
+        List<ServiceType> services = serviceRepository.findAllByServiceId(serviceID);
         
+        // Convert entities to DTOs
+        return services.stream()
+                       .map(service -> ServiceTypeDTO.builder()
+                           .serviceID(service.getServiceId())
+                           .serviceName(service.getServiceName())
+                           .build())
+                       .collect(Collectors.toList());
+    } catch (Exception e) {
+        log.error("Error retrieving services by serviceID {}: {}", serviceID, e.getMessage());
+        throw new DatabaseErrorException("Error fetching services.", e);
     }
+}
+
+public List<ServiceTypeDTO> getAll() {
+    return serviceRepository.findAll().stream()
+                            .map(service -> ServiceTypeDTO.builder()
+                                .serviceID(service.getServiceId())
+                                .serviceName(service.getServiceName())
+                                .build())
+                            .collect(Collectors.toList());
+}
+
+
 
    
 }

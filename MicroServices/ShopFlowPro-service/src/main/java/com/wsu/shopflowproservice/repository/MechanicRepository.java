@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface MechanicRepository extends JpaRepository<Mechanic, String> {
 
-    @Query(nativeQuery = true, value = "SELECT mechanic_id as mechanicId, first_name as firstName, last_name as lastName, specialization as specialization FROM mechanic where :search IS NULL OR (first_name = :search OR last_name = :search OR specialization = :search)")
+    @Query(nativeQuery = true, value = "SELECT mechanic_id as mechanicId, mechanic_first_name as firstName, mechanic_last_name as lastName FROM mechanic where :search IS NULL OR (mechanic_first_name = :search OR mechanic_last_name = :search)")
 
     Page<Object[]> findBySearch(String search, Pageable pageable);
 
