@@ -35,6 +35,8 @@ public class ServiceOrder {
     private String vin;
     @Column(name = "mechanic_id")
     private Integer mechanicId;
+    @Column(name = "service_id")
+    private Integer serviceId;
     @Column(name = "date_recieved")
     private Date dateRecieved;
     @Column(name = "date_completed")
@@ -50,5 +52,6 @@ public class ServiceOrder {
     @JoinColumn(name = "service_id"))
     @ManyToMany
     private Set<ServiceType> lineItems;
+    
     
 }
