@@ -51,8 +51,8 @@ DROP TABLE IF EXISTS shop_flow_pro.vehicle;
 CREATE TABLE vehicle (
     vin VARCHAR(17) PRIMARY KEY,
     make_id INT,
-    model VARCHAR(25) NOT NULL,
-    year INT NOT NULL,
+    model VARCHAR(25) NULL,
+    year INT NULL,
     description VARCHAR(250) NULL,
 -- add FOREIGN KEY MakeID
 FOREIGN KEY (make_id) REFERENCES make(make_id)
