@@ -6,16 +6,16 @@ USE shop_flow_pro;
 DROP TABLE IF EXISTS shop_flow_pro.mechanic;
 -- Create Mechanic table
 CREATE TABLE mechanic (
-    mechanic_id INT AUTO_INCREMENT NOT NULL,
+    mechanic_id VARCHAR(50) NOT NULL,
     mechanic_first_name VARCHAR(50) NOT NULL,
     mechanic_last_name VARCHAR(50) NOT NULL,
     PRIMARY KEY (mechanic_id)
 );
-INSERT INTO shop_flow_pro.mechanic (mechanic_first_name,  mechanic_last_name) VALUES ('Alex', 'Smith');
-INSERT INTO shop_flow_pro.mechanic (mechanic_first_name,  mechanic_last_name) VALUES ('Jamie', 'Johnson');
-INSERT INTO shop_flow_pro.mechanic (mechanic_first_name,  mechanic_last_name) VALUES ('Taylor', 'Brown');
-INSERT INTO shop_flow_pro.mechanic (mechanic_first_name,  mechanic_last_name) VALUES ('Morgan', 'Davis');
-INSERT INTO shop_flow_pro.mechanic (mechanic_first_name,  mechanic_last_name) VALUES ('Casey', 'Wilson');
+INSERT INTO shop_flow_pro.mechanic (mechanic_id, mechanic_first_name,  mechanic_last_name) VALUES ('1', 'Alex', 'Smith');
+INSERT INTO shop_flow_pro.mechanic (mechanic_id, mechanic_first_name,  mechanic_last_name) VALUES ('2', 'Jamie', 'Johnson');
+INSERT INTO shop_flow_pro.mechanic (mechanic_id, mechanic_first_name,  mechanic_last_name) VALUES ('3', 'Taylor', 'Brown');
+INSERT INTO shop_flow_pro.mechanic (mechanic_id, mechanic_first_name,  mechanic_last_name) VALUES ('4', 'Morgan', 'Davis');
+INSERT INTO shop_flow_pro.mechanic (mechanic_id, mechanic_first_name,  mechanic_last_name) VALUES ('5', 'Casey', 'Wilson');
 
 
 DROP TABLE IF EXISTS shop_flow_pro.make;
@@ -39,7 +39,7 @@ INSERT INTO shop_flow_pro.make (make_name) VALUES ('Hyundai');
 -- Create Mechanic-to-Make table (junction table)
 DROP TABLE IF EXISTS shop_flow_pro.mechanic_to_make;
 CREATE TABLE mechanic_to_make (
-    mechanic_id INT,
+    mechanic_id VARCHAR(50),
     make_id INT,
     PRIMARY KEY (mechanic_id, make_id),
 -- Add foreign Keys MID and MakeID
@@ -78,7 +78,7 @@ DROP TABLE IF EXISTS shop_flow_pro.service_order;
 CREATE TABLE service_order (
     service_order_id INT PRIMARY KEY AUTO_INCREMENT,
     vin VARCHAR(17),
-    mechanic_id INT,
+    mechanic_id VARCHAR(50),
     service_id INT,
     date_recieved DATETIME NOT NULL,
     date_completed DATETIME NULL,
