@@ -42,7 +42,7 @@ export class ServiceOrderService {
         console.error(error)
       }
     })
-    */
+
       // Intial attempt for GET hhtp request
       this.http.get<{ orders: any[] }>('http://localhost:8080/shop-flow-pro-service/service-order-service').subscribe({
         next: (res: { orders: { id: number; serviceId: number; vin: string; customer_first_name: string; customer_last_name: string; date_received: Date; service_cost: number; }[]; }) => {
@@ -53,6 +53,7 @@ export class ServiceOrderService {
           console.error('Error fetching orders:', error);
         }
       });
+      */
     return this.orders;
   }
 
