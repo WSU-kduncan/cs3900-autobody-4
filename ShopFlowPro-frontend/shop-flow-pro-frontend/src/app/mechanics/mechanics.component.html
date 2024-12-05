@@ -5,11 +5,13 @@
       <!-- Loop through the mechanics array -->
       <div *ngFor="let mechanic of mechanics" class="mechanic">
         <div class="mechanic-details">
-          <span><strong>Mechanic ID:</strong> {{ mechanic.id }}-</span>
-          <span><strong>Name:</strong> {{ mechanic.name }}-</span>
-          <span><strong>Specialty:</strong> {{ mechanic.specialty }}</span>
+          <!-- Updated mechanic properties based on the new model -->
+          <span><strong>Name:</strong> {{ mechanic.mechanic_first_name }} {{ mechanic.mechanic_last_name }}-</span>
+          <span><strong>Mechanic ID:</strong> {{ mechanic.mechanic_id }}-</span>
         </div>
-        <button>View Profile</button>
+
+        <!-- Button to delete a mechanic -->
+        <button (click)="deleteMechanic(mechanic.mechanic_id)">Delete</button>
       </div>
     </div>
   </div>

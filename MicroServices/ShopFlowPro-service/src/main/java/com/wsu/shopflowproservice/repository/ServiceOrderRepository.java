@@ -16,6 +16,6 @@ public interface ServiceOrderRepository extends JpaRepository<ServiceOrder, Inte
             "WHERE (:customerLastName IS NULL OR c.CustomerLastName = :customerLastName) " +
             "AND (:dateCompleted IS NULL OR s.DateCompleted = :dateCompleted)")
             */
-            Page<Object[]> findBySearch(String customerLastName, String vin, Integer serviceOrderId, Pageable pageable);
+            //Page<Object[]> findBySearch(String customerLastName, String vin, Integer serviceOrderId, Pageable pageable);
 
 }

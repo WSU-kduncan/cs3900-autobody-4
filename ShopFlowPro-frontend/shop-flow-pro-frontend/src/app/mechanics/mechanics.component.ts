@@ -1,16 +1,40 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MechanicService } from '../mechanics.service';
 
 @Component({
   selector: 'app-mechanics',
-  standalone: true,
-  imports: [CommonModule],
   templateUrl: './mechanics.component.html',
-  styleUrl: './mechanics.component.css'
+  styleUrls: ['./mechanics.component.css']
 })
-export class MechanicsComponent {
-  mechanics = [
-    { id: 1, name: 'John Doe', specialty: 'Honda' },
-    { id: 2, name: 'Jane Smith', specialty: 'Chevrolet' },
-  ];
+export class MechanicsComponent implements OnInit {
+
+  mechanics: any[] = [];
+  newMechanic: any = {}; // Form model for new mechanic
+
+  constructor(private mechanicService: MechanicService) { }
+
+  ngOnInit(): void {
+    this.getMechanics();
+  }
+
+  // Fetch all mechanics
+  getMechanics(): void {
+    this.mechanicService.getMechanics().subscribe(data => {
+      this.mechanics = data;
+    });
+  }
+
+  // Add a new mechanic
+  addMechanic(): void {
+    this.mechanicService.addMechanic(this.newMechanic).subscribe(data => {
+      this.getMechanics();  // Refresh the list after adding
+    });
+  }
+
+  // Delete a mechanic
+  deleteMechanic(id: number): void {
+    this.mechanicService.deleteMechanic(id).subscribe(data => {
+      this.getMechanics();  // Refresh the list after deletion
+    });
+  }
 }

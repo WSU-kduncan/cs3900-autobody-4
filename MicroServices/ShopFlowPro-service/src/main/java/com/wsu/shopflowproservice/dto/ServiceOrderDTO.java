@@ -26,6 +26,7 @@ public class ServiceOrderDTO {
     private String customerFirstName;
     private String customerLastName;
     private Float totalCost;
+    private Integer serviceId;
     private Set<ServiceType> lineItems;
     
 }

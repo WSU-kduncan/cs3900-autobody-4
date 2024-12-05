@@ -37,7 +37,6 @@ public class MechanicService {
                     .mechanicId((String) mechanic[0])
                     .firstName((String) mechanic[1])
                     .lastName((String) mechanic[2])
-                    .specialization((String) mechanic[3])
                     .build());
         } catch (Exception e) {
             log.error("Failed to retrieve mechanics. search: {}, sortField: {}, sortOrder: {}, page: {}, rpp: {}, Exception: {}",
@@ -108,7 +107,6 @@ public class MechanicService {
         return Mechanic.builder()
                 .firstName(mechanicDTO.getFirstName())
                 .lastName(mechanicDTO.getLastName())
-                .specialization(mechanicDTO.getSpecialization())
                 .build();
     }
 
@@ -120,7 +118,6 @@ public class MechanicService {
                 .mechanicId(mechanic.getMechanicId())
                 .firstName(mechanic.getFirstName())
                 .lastName(mechanic.getLastName())
-                .specialization(mechanic.getSpecialization())
                 .build() : null;
 
     } 

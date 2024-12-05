@@ -22,7 +22,6 @@ public class MechanicDTO {
     @NotBlank(message = "Last Name must not be null or blank")
     private String lastName;
 
-    @NotBlank(message = "Specialization must not be null or blank")
-    private String specialization;
+   
 
 }

@@ -34,6 +34,5 @@ public class Mechanic {
     @Column(name = "mechanic_last_name", nullable = false)
     private String lastName;
 
-    @Column(name = "specialization", nullable = false)
-    private String specialization;
+    
 }
