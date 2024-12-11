@@ -1,1 +1,44 @@
-<p>add-mechanic works!</p>
+<div class="add-mechanic">
+    <div class="content">
+      <h2>Add New Mechanic</h2>
+      <div class="form-container">
+        <form (ngSubmit)="submitForm()">
+          <div class="form-group">
+            <label for="mechanicId">Mechanic ID:</label>
+            <input
+              id="mechanicId"
+              [(ngModel)]="mechanic.mechanicId"
+              name="mechanicId"
+              class="form-control"
+              required
+            />
+          </div>
+          
+          <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input
+              id="firstName"
+              [(ngModel)]="mechanic.firstName"
+              name="firstName"
+              class="form-control"
+              required
+            />
+          </div>
+          
+          <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input
+              id="lastName"
+              [(ngModel)]="mechanic.lastName"
+              name="lastName"
+              class="form-control"
+              required
+            />
+          </div>
+  
+          <button type="submit" class="submit-btn">Add Mechanic</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  

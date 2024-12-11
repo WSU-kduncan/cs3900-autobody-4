@@ -1,12 +1,13 @@
 // app.module.ts
 import { HttpClient } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     ReactiveFormsModule,
     NgModule,
+    FormsModule,
     HttpClient,
     // other modules
   ],

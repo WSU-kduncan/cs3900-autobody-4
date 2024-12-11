@@ -6,7 +6,7 @@ import { ServiceOrderService } from '../service-order.service';
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [RouterModule, CommonModule],
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css']
 })
