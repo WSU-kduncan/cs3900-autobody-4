@@ -1,13 +1,9 @@
-<!-- Uses ngFor to loop through array or services to then display the name and description.
- Has details button but no link -->
 <div class="service-list-container">
-    <h2>Explore Our Services</h2>
-    <div class="service-list">
-      <div *ngFor="let service of services" class="service-item">
-        <h2>{{ service.name }}</h2>
-        <p>{{ service.description }}</p>
-        <button (click)="viewServiceDetails(service.id)">View Details</button>
-      </div>
+  <h1>Available Services</h1>
+  <div class="service-list">
+    <div *ngFor="let service of services" class="service-item">
+      <h2>{{ service.serviceName }}</h2>
+      <p>Service ID: {{ service.serviceID }}</p>
     </div>
   </div>
-  
+</div>
