@@ -1,13 +1,13 @@
 
 <div class="mechanics-page">
   <div class="content">
-    <h2>Our Mechanics</h2>
+    <h2>Mechanics</h2>
     <div class="mechanic-list">
       <ul>
         <li *ngFor="let mechanic of mechanics" class="mechanic">
           <span>{{ mechanic.mechanicId }} - {{ mechanic.firstName }} {{ mechanic.lastName }}</span>
           <div class="actions">
-            <button class="update-btn">Update</button>
+            <a href="/mechanic-form" class="button-link">Update</a>
             <button class="delete-btn" (click)="confirmDelete(mechanic.mechanicId)">Delete</button>
           </div>
         </li>

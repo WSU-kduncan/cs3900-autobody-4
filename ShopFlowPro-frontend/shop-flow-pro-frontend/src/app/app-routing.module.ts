@@ -10,6 +10,7 @@ import { CreateServiceOrderComponent } from './create-service-order/create-servi
 import { ServiceListComponent } from './service-list/service-list.component';
 import { ServiceOrderDetailsComponent } from './service-order-details/service-order-details.component';
 import { AddMechanicComponent } from './add-mechanic/add-mechanic.component';
+import { MechanicFormComponent } from './mechanic-form/mechanic-form.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -21,7 +22,9 @@ const routes: Routes = [
   { path: 'create-new-service-order', component: CreateServiceOrderComponent },
   { path: 'service-list', component: ServiceListComponent },
   { path: 'service-order-details/:id', component: ServiceOrderDetailsComponent},
-  { path: 'add-mechanic', component: AddMechanicComponent }
+  { path: 'add-mechanic', component: AddMechanicComponent },
+  { path: 'mechanic-form', component: MechanicFormComponent }
+  
 
 
 ];

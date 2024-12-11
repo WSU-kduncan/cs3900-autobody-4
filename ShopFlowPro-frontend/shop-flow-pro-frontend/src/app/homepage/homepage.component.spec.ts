@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HomepageComponent } from './homepage.component';
 import { Router } from '@angular/router';
-import { ServiceOrderService } from '../service-order.service';
+import { ServiceOrderService } from '../../services/service-order.service';
 import { of } from 'rxjs';
 
 describe('HomepageComponent', () => {

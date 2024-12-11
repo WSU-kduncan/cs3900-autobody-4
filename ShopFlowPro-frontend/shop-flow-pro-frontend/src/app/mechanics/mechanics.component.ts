@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MechanicService } from '../mechanics.service';
+import { MechanicService } from '../../services/mechanics.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
