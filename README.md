@@ -37,6 +37,16 @@ Streamline operations for mechanics and technicians by offering a simple, effect
 
 [DB-ReadMe](https://github.com/WSU-kduncan/cs3900-autobody-4/blob/d9074f0349f0b193b94b8ebc5662cd38dc173b28/DB/README.md) - For more information about launching our database
 
+##Building the Backend 
+TODO
+##Building the Front-end Application 
+- Install Node.js Download
+- npm install -g @angular/cli
+- ng version To verify install
+- cd into the ShopFlowPro-frontend folder
+- Run npm install to install all project dependencies.
+- ng serve
+- Navigate to http://localhost:4200/.
 # What Works Checklist
-
+TODO
 [ ]
