@@ -1,58 +1,132 @@
 .mechanics-page {
-    margin-left: 50px; /* Adjusts for the fixed navbar width */
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    background-color: #ecf0f1; /* Light gray background */
-    min-height: 100vh;
-  }
+  margin-left: 50px; /* Adjusts for the fixed navbar width */
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #ecf0f1; /* Light gray background */
+  min-height: 100vh;
+}
 
-  .content {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-  }
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
 
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #34495e; /* Darker gray for titles */
-  }
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #34495e; /* Darker gray for titles */
+}
 
-  .mechanic-list {
-    margin-top: 20px;
-  }
+.mechanic-list {
+  margin-top: 20px;
+}
 
-  .mechanic {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px;
-    background-color: white;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  }
+.mechanic {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
 
-  .mechanic button {
-    background-color: #e74c3c; /* Red button */
-    color: white;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
+.actions {
+  display: flex;
+  gap: 10px;
+}
 
-  .mechanic button:hover {
-    background-color: #c0392b; /* Darker red on hover */
-  }
+.update-btn {
+  background-color: #3498db; /* Blue */
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
 
-  .mechanic-details {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+.update-btn:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+}
 
-  .mechanic-details span {
-    font-size: 1rem;
-    color: #34495e;
-  }
+.delete-btn {
+  background-color: #e74c3c; /* Red button */
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b; /* Darker red on hover */
+}
+
+.add-mechanic-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #27ae60; /* Green */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.add-mechanic-btn:hover {
+  background-color: #229954; /* Darker green on hover */
+}
+
+/* Popup Styles */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.confirm-btn {
+  background-color: #27ae60; /* Green */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background 0.3s ease;
+}
+
+.confirm-btn:hover {
+  background-color: #229954; /* Darker green on hover */
+}
+
+.cancel-btn {
+  background-color: #e74c3c; /* Red */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.cancel-btn:hover {
+  background-color: #c0392b; /* Darker red on hover */
+}

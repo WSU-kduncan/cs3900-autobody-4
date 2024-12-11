@@ -12,8 +12,8 @@ export class MechanicService {
   constructor(private http: HttpClient) { }
 
   // GET: Retrieve all mechanics
-  getMechanics(): Observable<any> {
-    return this.http.get(`${this.baseUrl}`);
+  getMechanics(page: number, rpp: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}?page=${page}&rpp=${rpp}`);
   }
 
   // GET: Retrieve a specific mechanic by ID
