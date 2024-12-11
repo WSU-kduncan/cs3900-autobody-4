@@ -47,6 +47,8 @@ TODO
 - Run npm install to install all project dependencies.
 - ng serve
 - Navigate to http://localhost:4200/.
+
+[Front-end-README.md](https://github.com/WSU-kduncan/cs3900-autobody-4/blob/main/ShopFlowPro-frontend%2FREADMES%2FREADME.md)
 # What Works Checklist
 TODO
 [ ]
