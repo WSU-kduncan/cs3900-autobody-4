@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { ServiceOrderService } from '../service-order.service';
+import { ServiceOrderService } from '../../services/service-order.service';
 
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [RouterModule, CommonModule],
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css']
 })

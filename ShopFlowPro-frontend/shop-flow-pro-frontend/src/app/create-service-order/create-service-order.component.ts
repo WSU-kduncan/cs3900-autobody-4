@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ServiceOrderService } from '../service-order.service';
+import { ServiceOrderService } from '../../services/service-order.service';
 import { CommonModule } from '@angular/common';
 
 @Component({

@@ -1,0 +1,33 @@
+<div class="form-container">
+    <h2>Edit Mechanic Details</h2>
+    <form [formGroup]="mechanicForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="firstName">First Name:</label>
+        <input
+          id="firstName"
+          type="text"
+          class="form-control"
+          formControlName="firstName"
+        />
+        <div *ngIf="mechanicForm.get('firstName')?.invalid && mechanicForm.get('firstName')?.touched" class="error">
+          First name is required
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="lastName">Last Name:</label>
+        <input
+          id="lastName"
+          type="text"
+          class="form-control"
+          formControlName="lastName"
+        />
+        <div *ngIf="mechanicForm.get('lastName')?.invalid && mechanicForm.get('lastName')?.touched" class="error">
+          Last name is required
+        </div>
+      </div>
+  
+      <button type="submit" class="submit-btn" [disabled]="mechanicForm.invalid">Submit</button>
+    </form>
+  </div>
+  

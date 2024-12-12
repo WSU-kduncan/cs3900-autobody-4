@@ -66,21 +66,24 @@ h2 {
   background-color: #c0392b; /* Darker red on hover */
 }
 
-.add-mechanic-btn {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #27ae60; /* Green */
-  color: white;
-  border: none;
-  border-radius: 5px;
+.button-link {
+  display: inline-block;
+  padding: 10px 20px; /* Add space inside */
+  background-color: #3498db; /* Blue background */
+  color: white; /* White text */
+  text-decoration: none; /* Remove underline */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 1rem; /* Adjust text size */
+  text-align: center;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background-color 0.3s ease;
+  border: none; /* Remove default border */
 }
 
-.add-mechanic-btn:hover {
-  background-color: #229954; /* Darker green on hover */
+/* Add hover effect */
+.button-link:hover {
+  background-color: #2980b9; /* Darker blue on hover */
 }
-
 /* Popup Styles */
 .popup {
   position: fixed;

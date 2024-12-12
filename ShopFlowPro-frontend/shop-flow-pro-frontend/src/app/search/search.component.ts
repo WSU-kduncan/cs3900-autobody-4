@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ServiceOrderService } from '../service-order.service';
+import { ServiceOrderService } from '../../services/service-order.service';
 import { RouterModule } from '@angular/router';
 import { CommonModule, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';

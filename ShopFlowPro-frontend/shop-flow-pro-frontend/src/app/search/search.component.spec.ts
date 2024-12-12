@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { SearchComponent } from './search.component';
-import { ServiceOrderService } from '../service-order.service';
+import { ServiceOrderService } from '../../services/service-order.service';
 import { FormsModule } from '@angular/forms';
 import { of } from 'rxjs';
 

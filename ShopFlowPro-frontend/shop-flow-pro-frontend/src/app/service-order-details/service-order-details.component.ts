@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
-import { ServiceOrderService } from '../service-order.service';
+import { ServiceOrderService } from '../../services/service-order.service';
 
 @Component({
   selector: 'app-service-order-details',
