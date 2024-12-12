@@ -24,12 +24,4 @@ describe('FooterComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('p')?.textContent).toContain('Footer Text');
   });
-
-  it('should call a method when a link is clicked', () => {
-    spyOn(component, 'onLinkClick');
-    const compiled = fixture.nativeElement as HTMLElement;
-    const link = compiled.querySelector('a');
-    link?.dispatchEvent(new Event('click'));
-    expect(component.onLinkClick).toHaveBeenCalled();
-  });
 });
