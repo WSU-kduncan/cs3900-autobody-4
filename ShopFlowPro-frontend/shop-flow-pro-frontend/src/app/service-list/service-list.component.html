@@ -1,0 +1,9 @@
+<div class="service-list-container">
+  <h1>Available Services</h1>
+  <div class="service-list">
+    <div *ngFor="let service of services" class="service-item">
+      <h2>{{ service.serviceName }}</h2>
+      <p>Service ID: {{ service.serviceID }}</p>
+    </div>
+  </div>
+</div>
