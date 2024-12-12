@@ -41,7 +41,8 @@ Streamline operations for mechanics and technicians by offering a simple, effect
 
 [DB-ReadMe](https://github.com/WSU-kduncan/cs3900-autobody-4/blob/d9074f0349f0b193b94b8ebc5662cd38dc173b28/DB/README.md) - For more information about launching our database
 ### Building the backend
-TODO
+- open the shopflowproservice file in a docker environment
+- run the file the Spring boot picture should show up in the terminal
 
 ### Building the frontend
 - Install Node.js Download
