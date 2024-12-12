@@ -36,11 +36,13 @@ describe('MechanicsComponent', () => {
     expect(compiled.querySelector('.no-mechanics')?.textContent).toContain('No mechanics available');
   });
 
-  it('should call viewMechanicDetails when a mechanic is clicked', () => {
-    spyOn(component, 'viewMechanicDetails');
-    const button = fixture.nativeElement.querySelector('button');
-    button.click();
-    expect(component.viewMechanicDetails).toHaveBeenCalled();
+  it('should confirm delete by setting mechanic ID and showing popup', () => {
+    const mechanicId = 5;
+
+    component.confirmDelete(mechanicId);
+
+    expect(component.selectedMechanicId).toBe(mechanicId);
+    expect(component.showDeletePopup).toBe(true);
   });
   
 });
