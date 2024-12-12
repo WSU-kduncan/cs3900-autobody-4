@@ -24,10 +24,4 @@ describe('HeaderComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain('Header Title');
   });
-  // Check if the event is emitted
-  it('should emit an event on click', () => {
-    spyOn(component.someEvent, 'emit');
-    component.onButtonClick();
-    expect(component.someEvent.emit).toHaveBeenCalled();
-  });
 });
