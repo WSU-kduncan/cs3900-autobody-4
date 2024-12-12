@@ -40,5 +40,18 @@ Streamline operations for mechanics and technicians by offering a simple, effect
 - Once its verified you can then click the finish button on the bottom of the screen to connect
 
 [DB-ReadMe](https://github.com/WSU-kduncan/cs3900-autobody-4/blob/d9074f0349f0b193b94b8ebc5662cd38dc173b28/DB/README.md) - For more information about launching our database
+### Building the backend
+TODO
+
+### Building the frontend
+- Install Node.js Download
+- npm install -g @angular/cli
+- ng version To verify install
+- cd into the ShopFlowPro-frontend folder
+- Run npm install to install all project dependencies.
+- ng serve
+- Navigate to http://localhost:4200/.
+
+[Frontend-README.md](https://github.com/WSU-kduncan/cs3900-autobody-4/tree/20d794411573adff947bb0f6fdae83cbff8ce1e4/ShopFlowPro-frontend/READMES) - For more information about building the frontend
 # What works Checklist
 [ ] TODO
