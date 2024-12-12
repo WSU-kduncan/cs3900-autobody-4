@@ -1,8 +1,8 @@
 # ShopFlow Pro Project Documentation
 ### Table of Contents
-- Business Case & Agile Requirements
-- How to Build the major components of the project
-- What works Checklist
+- [Business Case & Agile Requirements](https://github.com/WSU-kduncan/cs3900-autobody-4/blob/main/README.md#business-case--agile-requirements)
+- [How to Build the major components of the project](https://github.com/WSU-kduncan/cs3900-autobody-4/blob/main/README.md#how-to-build-the-major-components-of-the-project)
+- [What works Checklist](https://github.com/WSU-kduncan/cs3900-autobody-4/blob/main/README.md#what-works-checklist)
 ## Business Case & Agile Requirements
 ### Summary:
 #### Vision: 
