@@ -1,4 +1,8 @@
 # ShopFlow Pro Project Documentation
+### Table of Contents
+- [Business Case & Agile Requirements](https://github.com/WSU-kduncan/cs3900-autobody-4/blob/main/README.md#business-case--agile-requirements)
+- [How to Build the major components of the project](https://github.com/WSU-kduncan/cs3900-autobody-4/blob/main/README.md#how-to-build-the-major-components-of-the-project)
+- [What works Checklist](https://github.com/WSU-kduncan/cs3900-autobody-4/blob/main/README.md#what-works-checklist)
 ## Business Case & Agile Requirements
 ### Summary:
 #### Vision: 
@@ -21,13 +25,13 @@ Streamline operations for mechanics and technicians by offering a simple, effect
 
 [BR-ProjectRequirementsDocument.md](https://github.com/WSU-kduncan/cs3900-autobody-4/blob/d9074f0349f0b193b94b8ebc5662cd38dc173b28/BusinessFiles/BR-ProjectRequirementsDocument.md) - More information about project requirements.
 
-# How to Build The Major Components of the Project.
-## Building the Database
+## How to Build the major components of the project.
+### Building the Database
 - To Build the database you must ensure that no other docker containers are not running
 - then you must download theShopFlowPro_Container folder onto your desktop 
 - Make it available to your terminal use the proper commands to change your directory to the container so you are in the folder and can see the init and .yml files.
 - Once in the directory run the `docker compose up` to successfully start the container.
-## Connecting to the Database
+### Connecting to the Database
 - After starting the container open the Dbeaver application on your desktop
 - Once open, double-click the dark gray space on the left of the application.
 - Select Create --> Connection --> MariaDB.
@@ -36,10 +40,10 @@ Streamline operations for mechanics and technicians by offering a simple, effect
 - Once its verified you can then click the finish button on the bottom of the screen to connect
 
 [DB-ReadMe](https://github.com/WSU-kduncan/cs3900-autobody-4/blob/d9074f0349f0b193b94b8ebc5662cd38dc173b28/DB/README.md) - For more information about launching our database
-
-## Building the Backend 
+### Building the backend
 TODO
-## Building the Front-end Application 
+
+### Building the frontend
 - Install Node.js Download
 - npm install -g @angular/cli
 - ng version To verify install
@@ -48,7 +52,6 @@ TODO
 - ng serve
 - Navigate to http://localhost:4200/.
 
-[Front-end-README.md](https://github.com/WSU-kduncan/cs3900-autobody-4/blob/main/ShopFlowPro-frontend%2FREADMES%2FREADME.md)
-# What Works Checklist
-TODO
-[ ]
+[Frontend-README.md](https://github.com/WSU-kduncan/cs3900-autobody-4/tree/20d794411573adff947bb0f6fdae83cbff8ce1e4/ShopFlowPro-frontend/READMES) - For more information about building the frontend
+# What works Checklist
+[ ] TODO
