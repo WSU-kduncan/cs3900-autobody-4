@@ -59,11 +59,9 @@ The shop owner has the ability to create a service order. The following bullets 
 
 - Customer name
 - Date Received
-- Date completed
 - Cost
 - Customer's vehicles vin
 - Service information
-- Service code
 - Assign a mechanic to the service orders work
 - Vehicle make, model, and year.
 
@@ -75,12 +73,6 @@ The user will be able include the following in a service order.
 - The vehicles make
 - The vehicles year
 - The vehciles vin number
-
-Mechanics will be able to do the following:
-
-- See the service they are assigned to
-- Add parts that were used in service
-- Update cost
 
 # Future Work
 
