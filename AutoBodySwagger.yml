@@ -1,0 +1,243 @@
+openapi: 3.0.3
+info:
+  title: shop-flow-pro-service
+  version: 1.0.0
+  contact: {}
+servers:
+  - url: http://localhost:8081/shop-flow-pro-service
+paths:
+  /mechanics:
+    get:
+      tags:
+        - mechanics
+      summary: Get Mechanics
+      description: Get Mechanics
+      operationId: getMechanics
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: string
+            example: '1'
+        - name: rpp
+          in: query
+          schema:
+            type: string
+            example: '50'
+        - name: sortOrder
+          in: query
+          schema:
+            type: string
+            example: asc
+        - name: sortField
+          in: query
+          schema:
+            type: string
+            example: firstName
+      responses:
+        '200':
+          description: ''
+    post:
+      tags:
+        - mechanics
+      summary: Add Mechanic
+      description: Add Mechanic
+      operationId: addMechanic
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                firstName:
+                  type: string
+                  example: Casey
+                lastName:
+                  type: string
+                  example: Stephen
+                mechanicId:
+                  type: string
+                  example: '6'
+            examples:
+              Add Mechanic:
+                value:
+                  firstName: Casey
+                  lastName: Stephen
+                  mechanicId: '6'
+      responses:
+        '200':
+          description: ''
+  /mechanics/{MECHANIC_ID}:
+    put:
+      tags:
+        - mechanics
+      summary: Update Mechanic
+      description: Update Mechanic
+      operationId: updateMechanic
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                firstName:
+                  type: string
+                  example: Casey
+                lastName:
+                  type: string
+                  example: Stephen
+            examples:
+              Update Mechanic:
+                value:
+                  firstName: Casey
+                  lastName: Stephen
+      responses:
+        '200':
+          description: ''
+    delete:
+      tags:
+        - mechanics
+      summary: Delete Mechnic
+      description: Delete Mechnic
+      operationId: deleteMechnic
+      responses:
+        '200':
+          description: ''
+    parameters:
+      - name: MECHANIC_ID
+        in: path
+        required: true
+        schema:
+          type: string
+  /services:
+    get:
+      tags:
+        - Services
+      summary: Get Services
+      description: Get Services
+      operationId: getServices
+      responses:
+        '200':
+          description: ''
+  /serviceOrders:
+    post:
+      tags:
+        - Service Orders
+      summary: Add Service Order
+      description: Add Service Order
+      operationId: addServiceOrder
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                customerFirstName:
+                  type: string
+                  example: John
+                customerLastName:
+                  type: string
+                  example: Stephen
+                serviceId:
+                  type: number
+                  example: 2
+                mechanicId:
+                  type: string
+                  example: '1'
+                totalCost:
+                  type: number
+                  example: 90
+                vin:
+                  type: string
+                  example: VEHICLE001100011
+            examples:
+              Add Service Order:
+                value:
+                  customerFirstName: John
+                  customerLastName: Stephen
+                  serviceId: 2
+                  mechanicId: '1'
+                  totalCost: 90
+                  vin: VEHICLE001100011
+      responses:
+        '200':
+          description: ''
+  /serviceOrders/{SERVICE_ORDER_ID}:
+    get:
+      tags:
+        - Service Orders
+      summary: Get Service Order
+      description: Get Service Order
+      operationId: getServiceOrder
+      responses:
+        '200':
+          description: ''
+    put:
+      tags:
+        - Service Orders
+      summary: Update Service Order
+      description: Update Service Order
+      operationId: updateServiceOrder
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                customerFirstName:
+                  type: string
+                  example: John
+                customerLastName:
+                  type: string
+                  example: Stephen
+                dateRecieved:
+                  type: string
+                  example: '2024-11-22T20:50:13.217+00:00'
+                serviceId:
+                  type: number
+                  example: 4
+                mechanicId:
+                  type: number
+                  example: 2
+                serviceOrderId:
+                  type: number
+                  example: 4
+                totalCost:
+                  type: number
+                  example: 90
+                vin:
+                  type: string
+                  example: VEHICLE001100011
+            examples:
+              Update Service Order:
+                value:
+                  customerFirstName: John
+                  customerLastName: Stephen
+                  dateRecieved: '2024-11-22T20:50:13.217+00:00'
+                  serviceId: 4
+                  mechanicId: 2
+                  serviceOrderId: 4
+                  totalCost: 90
+                  vin: VEHICLE001100011
+      responses:
+        '200':
+          description: ''
+    delete:
+      tags:
+        - Service Orders
+      summary: Delete Service Order
+      description: Delete Service Order
+      operationId: deleteServiceOrder
+      responses:
+        '200':
+          description: ''
+    parameters:
+      - name: SERVICE_ORDER_ID
+        in: path
+        required: true
+        schema:
+          type: string
+tags:
+  - name: mechanics
+  - name: Services
+  - name: Service Orders
