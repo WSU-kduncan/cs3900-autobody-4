@@ -54,8 +54,26 @@ Streamline operations for mechanics and technicians by offering a simple, effect
 - Navigate to http://localhost:4200/.
 
 [Frontend-README.md](https://github.com/WSU-kduncan/cs3900-autobody-4/tree/20d794411573adff947bb0f6fdae83cbff8ce1e4/ShopFlowPro-frontend/READMES) - For more information about building the frontend
-# What works Checklist
-[ ] TODO
+# What Works
+The shop owner has the ability to create a service order. The following bullets will be included on that service order.
+
+- Customer name
+- Date Received
+- Cost
+- Customer's vehicles vin
+- Service information
+- Assign a mechanic to the service orders work
+- Vehicle make, model, and year.
+
+The user will be able include the following in a service order.
+
+- Add customer name
+- Include description of service
+- The vehicles model
+- The vehicles make
+- The vehicles year
+- The vehciles vin number
 
 # Future Work
-TODO
+
+In Future updates, we plan to add login options and give every user their own account. This will create a change log and allow the users to know who made changes and when. We would also like to allow our program to link with popular invoicing software. This will allow the user to directly send information from the service order to an invoicing service to bill the customer.
