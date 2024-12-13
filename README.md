@@ -62,18 +62,18 @@ The shop owner has the ability to create a service order. The following bullets 
 - Cost
 - Customer's vehicles vin
 - Service information
-- Assign a mechanic to the service orders work
-- Vehicle make, model, and year.
+- Assign a mechanic to the service orders work (no implemented yet)
 
 The user will be able include the following in a service order.
 
-- Add customer name
-- Include description of service
-- The vehicles model
-- The vehicles make
-- The vehicles year
+- Add customer first and last name
+- Include service id
+- Date Recieved
+- Cost of service
 - The vehciles vin number
 
 # Future Work
 
-In Future updates, we plan to add login options and give every user their own account. This will create a change log and allow the users to know who made changes and when. We would also like to allow our program to link with popular invoicing software. This will allow the user to directly send information from the service order to an invoicing service to bill the customer.
+- In Future updates, we plan to add login options and give every user their own account. This will create a change log and allow the users to know who made changes and when. We would also like to allow our program to link with popular invoicing software. This will allow the user to directly send information from the service order to an invoicing service to bill the customer.
+
+- Some features that are currently unfulfilled per out Business Requirments include the ability to relate a mechanic to a specific service (their specialty). This would involve creatting some endpoints for that table per our database. Some bugs/partially implemented pieces include Updating a mechanic, upon doing so you get a 400 and message that the mechanic was unable to be updated. Some others include Getting service orders as there is only a GET for specific service orders per their Id rather than a get all service orders endpoint, alongside updating and deleting a service order. The search page and service detail pages are partially implemented as we were unable to get that fully working.
