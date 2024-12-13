@@ -71,10 +71,10 @@ The user will be able include the following in a service order.
 
 - Add customer name
 - Include description of service
-- Their vehicles model
-- Their vehicles make
-- Their vehicles year
-- Their vehciles vin number
+- The vehicles model
+- The vehicles make
+- The vehicles year
+- The vehciles vin number
 
 Mechanics will be able to do the following:
 
@@ -83,4 +83,5 @@ Mechanics will be able to do the following:
 - Update cost
 
 # Future Work
-TODO 
+
+In Future updates, we plan to add login options and give every user their own account. This will create a change log and allow the users to know who made changes and when. We would also like to allow our program to link with popular invoicing software. This will allow the user to directly send information from the service order to an invoicing service to bill the customer.
