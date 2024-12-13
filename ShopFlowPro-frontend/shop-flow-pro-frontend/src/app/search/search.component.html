@@ -1,25 +1,32 @@
-
-
 <div class="search-page">
   <div class="content">
     <h2>Search Service Orders</h2>
     <div class="search-bar">
-      <input type="text" [(ngModel)]="searchQuery" placeholder="Search by name, VIN, or service" />
+      <input
+        type="text"
+        [(ngModel)]="searchQuery"
+        placeholder="Search by name, VIN, or service"
+      />
       <button (click)="onSearch()">Search</button>
     </div>
 
-    <div class="results" *ngIf="searchResults.length > 0">
+    <div class="results" *ngIf="searchResults && searchResults.length > 0; else noResultsTemplate">
       <div class="result" *ngFor="let order of searchResults">
         <div class="result-info">
-          <span><strong>Order ID:</strong> {{ order.id }} </span>
-          <span><strong>Service ID:</strong> {{ order.serviceId }} </span>
-          <span><strong>Customer:</strong> {{ order.customer_first_name }} {{ order.customer_last_name }}</span>
+          <span><strong>Order ID:</strong> {{ order.serviceOrderId }}</span>
+          <span><strong>Service ID:</strong> {{ order.serviceId }}</span>
+          <span><strong>Customer:</strong> {{ order.customerFirstName }} {{ order.customerLastName }}</span>
         </div>
-        <button [routerLink]="['/service-order-details', order.id]" class="view-details-btn">View Details</button>
+        <button [routerLink]="['/service-order-details', order.serviceOrderId]" class="view-details-btn">
+          View Details
+        </button>
       </div>
     </div>
-    <div class="no-results" *ngIf="searchResults.length === 0">
-      <p>No results found</p>
-    </div>
+
+    <ng-template #noResultsTemplate>
+      <div class="no-results">
+        <p>No results found.</p>
+      </div>
+    </ng-template>
   </div>
 </div>

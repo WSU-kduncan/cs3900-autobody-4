@@ -11,15 +11,39 @@ import { ServiceOrderService } from '../../services/service-order.service';
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent {
-  todaysOrders: { id: number; serviceId: number; vin: string; customer_first_name: string; customer_last_name: string; }[] = [];
+  todaysOrders: any[] = [];
+  serviceOrderIds: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
   constructor(private serviceOrderService: ServiceOrderService) {}
 
   ngOnInit() {
-    this.todaysOrders = this.serviceOrderService.getOrders();
+    this.loadTodaysOrders();
   }
-
-  navigateToFeature(feature: string): void {
-    console.log('Navigating to feature: ' + feature); // Example implementation
+  loadTodaysOrders(): void {
+    const today = new Date().toISOString().split('T')[0];
+    const orders: any[] = [];
+    let remainingRequests = this.serviceOrderIds.length;
+  
+    this.serviceOrderIds.forEach((id) => {
+      this.serviceOrderService.getServiceOrder(id).subscribe({
+        next: (order) => {
+          const orderDate = new Date(order.dateReceived).toISOString().split('T')[0];
+          if (orderDate === today) {
+            orders.push(order);
+          }
+          remainingRequests--;
+          if (remainingRequests === 0) {
+            this.todaysOrders = orders;
+          }
+        },
+        error: (error) => {
+          console.error(`Error fetching ServiceOrder ID ${id}:`, error);
+          remainingRequests--;
+          if (remainingRequests === 0) {
+            this.todaysOrders = orders; // Still show successful results
+          }
+        }
+      });
+    });
   }
 }

@@ -27,7 +27,7 @@
       </div>
 
       <div class="form-group">
-        <label for="vin">Vin</label>
+        <label for="vin">VIN</label>
         <input 
           id="vin" 
           formControlName="vin" 
@@ -48,6 +48,31 @@
           class="form-control">
         <div *ngIf="serviceOrderForm.get('serviceId')?.touched && serviceOrderForm.get('serviceId')?.invalid">
           <small class="error-text">Service ID is required and must be a positive number</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="mechanicId">Mechanic ID</label>
+        <input 
+          id="mechanicId" 
+          formControlName="mechanicId" 
+          placeholder="Enter mechanic ID" 
+          class="form-control">
+        <div *ngIf="serviceOrderForm.get('mechanicId')?.touched && serviceOrderForm.get('mechanicId')?.invalid">
+          <small class="error-text">Mechanic ID is required and must be a positive number</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="totalCost">Total Cost</label>
+        <input 
+          id="totalCost" 
+          formControlName="totalCost" 
+          placeholder="Enter total cost" 
+          type="number"
+          class="form-control">
+        <div *ngIf="serviceOrderForm.get('totalCost')?.touched && serviceOrderForm.get('totalCost')?.invalid">
+          <small class="error-text">Total cost is required and must be a positive number</small>
         </div>
       </div>
 

@@ -1,19 +1,16 @@
-<!-- Created by Dylan Brumbaugh
- Incorporates ngIf and displays the service order information object 
- is the object exists.
- If object doesnt exist then displays service order not found message
--->
-<div class="service-order-details" *ngIf="serviceOrder">
-    <h2>Service Order Details</h2>
-    <div class="order-info">
-      <p><strong>Order ID:</strong> {{ serviceOrder.id }}</p>
-      <p><strong>Service ID:</strong> {{ serviceOrder.serviceId }}</p>
-      <p><strong>VIN:</strong> {{ serviceOrder.vin }}</p>
-      <p><strong>Customer:</strong> {{ serviceOrder.customer_first_name }} {{ serviceOrder.customer_last_name }}</p>
-      <p><strong>Date Received:</strong> {{ serviceOrder.date_received | date }}</p>
-    </div>
+<div class="service-order-details" *ngIf="serviceOrder; else errorTemplate">
+  <h2>Service Order Details</h2>
+  <div class="order-info">
+    <p><strong>Order ID:</strong> {{ serviceOrder.serviceOrderId }}</p>
+    <p><strong>Service ID:</strong> {{ serviceOrder.serviceId }}</p>
+    <p><strong>VIN:</strong> {{ serviceOrder.vin }}</p>
+    <p><strong>Customer:</strong> {{ serviceOrder.customerFirstName }} {{ serviceOrder.customerLastName }}</p>
+    <p><strong>Date Received:</strong> {{ serviceOrder.dateReceived | date }}</p>
+    <p><strong>Date Completed:</strong> {{ serviceOrder.dateCompleted ? (serviceOrder.dateCompleted | date) : 'Pending' }}</p>
+    <p><strong>Total Cost:</strong> ${{ serviceOrder.totalCost.toFixed(2) }}</p>
   </div>
-  <div *ngIf="!serviceOrder">
-    <p>Service order not found.</p>
-  </div>
-  
+</div>
+
+<ng-template #errorTemplate>
+  <p>{{ errorMessage }}</p>
+</ng-template>

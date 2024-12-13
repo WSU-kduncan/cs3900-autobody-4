@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { forkJoin, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -7,65 +8,19 @@ import { HttpClient } from '@angular/common/http';
 export class ServiceOrderService {
 
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient) { }
 
-  }
-  private orders = [
-    { 
-      id: 12345, 
-      serviceId: 1, 
-      vin: '1A2B3C4D5E6F7G8H9I0J', 
-      customer_first_name: 'John', 
-      customer_last_name: 'Doe', 
-      date_received: new Date(), 
-      service_cost: 99.99 
-    },
-    { 
-      id: 67890, 
-      serviceId: 2, 
-      vin: '0J9I8H7G6F5E4D3C2B1A', 
-      customer_first_name: 'Jane', 
-      customer_last_name: 'Smith', 
-      date_received: new Date(), 
-      service_cost: 149.99 
-    }
-  ];
 
-  // Method to get the orders
+  private baseUrl = 'http://localhost:8081/shop-flow-pro-service/serviceOrders'; 
 
-  getOrders() {
-    /** 
-    this.http.get("").subscribe({
-      next:(res: any) => {
-        this.orders = res.orders
-      }, error: (error) => {
-        console.error(error)
-      }
-    })
 
-      // Intial attempt for GET hhtp request
-      this.http.get<{ orders: any[] }>('http://localhost:8080/shop-flow-pro-service/service-order-service').subscribe({
-        next: (res: { orders: { id: number; serviceId: number; vin: string; customer_first_name: string; customer_last_name: string; date_received: Date; service_cost: number; }[]; }) => {
-          this.orders = res.orders;
-          console.log('Orders fetched successfully:', this.orders);
-        },
-        error: (error: any) => {
-          console.error('Error fetching orders:', error);
-        }
-      });
-      */
-    return this.orders;
+  // GET service order by id
+  getServiceOrder(serviceOrderId: number): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/${serviceOrderId}`);
   }
 
-  addOrder(order: { 
-    id: number; 
-    serviceId: number; 
-    vin: string; 
-    customer_first_name: string; 
-    customer_last_name: string; 
-    date_received: Date; 
-    service_cost: number;
-  }) {
-    this.orders.push(order);
+  addServiceOrder(serviceOrder: any): Observable<any> {
+    return this.http.post(`${this.baseUrl}`, serviceOrder);
   }
+
 }

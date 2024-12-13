@@ -12,36 +12,57 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-  // Initializing string variable to hold users search query
-  // Initializing arrays to hold all service orders and filtered results
+
   searchQuery: string = '';
-  serviceOrders: any[] = [];
   searchResults: any[] = [];
+  serviceOrderIds: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 
-  // Injecting the serviceOrderService to retrieve service order details
-  constructor(private serviceOrderService: ServiceOrderService) {}
+    constructor(private serviceOrderService: ServiceOrderService) {}
 
-  // Fetching the service orders from the service to store them in the arrays above
-  ngOnInit() {
-    // Fetch the service orders from the service
-    this.serviceOrders = this.serviceOrderService.getOrders();
-    this.searchResults = this.serviceOrders; // Initially, show all orders
-  }
-
-  // Triggers method when query is enetered 
-  // If the query has a value then it filters the service order based on the trigger
-  // Then checks if anything matches based on fist and last name, vin, or service id
-  // If the query doesnt match then display all service orders
-  onSearch() {
-    if (this.searchQuery) {
-      this.searchResults = this.serviceOrders.filter(order =>
-        order.customer_first_name.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-        order.customer_last_name.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-        order.vin.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-        order.serviceId.toString().includes(this.searchQuery)
-      );
-    } else {
-      this.searchResults = this.serviceOrders; // If no search query, show all orders
+    ngOnInit(): void {
+      this.fetchServiceOrders();
     }
-  }
+
+    fetchServiceOrders(): void {
+      const orders: any[] = [];
+  let remainingRequests = this.serviceOrderIds.length;
+
+  this.serviceOrderIds.forEach((id) => {
+    this.serviceOrderService.getServiceOrder(id).subscribe({
+      next: (order) => {
+        orders.push(order);
+        remainingRequests--;
+        if (remainingRequests === 0) {
+          this.searchResults = orders;
+        }
+      },
+      error: (error) => {
+        console.error(`Error fetching ServiceOrder ID ${id}:`, error);
+        remainingRequests--;
+        if (remainingRequests === 0) {
+          this.searchResults = orders; // Still show successful results
+        }
+      }
+    });
+  });
+}
+
+    onSearch(): void {
+      const query = this.searchQuery.trim().toLowerCase();
+  
+      if (query) {
+        this.searchResults = this.searchResults.filter((order) =>
+          [
+            order.customerFirstName,
+            order.customerLastName,
+            order.vin,
+            order.serviceOrderId.toString(),
+          ]
+            .map((field) => field?.toLowerCase() || '')
+            .some((field) => field.includes(query))
+        );
+      } else {
+        this.searchResults; // Show all if search is empty
+      }
+    }
 }
