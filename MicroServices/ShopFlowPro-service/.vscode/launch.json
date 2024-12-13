@@ -1,0 +1,36 @@
+{
+    "configurations": [
+      {
+        "type": "java",
+        "name": "ShopFlowProServiceApplication",
+        "request": "launch",
+        "mainClass": "com.wsu.shopflowproservice.ShopFlowProServiceApplication",
+        "projectName": "ShopFlowPro-service",
+        "args": "",
+        "env": {
+          "SERVER_PORT": "8080",
+          "SERVER_CONTEXT_PATH": "/shop-flow-pro-service",
+          "DATABASE_URL": "jdbc:mariadb://host.docker.internal:3306/shop_flow_pro",
+          "DATABASE_USERNAME": "user",
+          "DATABASE_PASSWORD": "password",
+          "DATABASE_DRIVER": "org.mariadb.jdbc.Driver"
+        }
+      },
+      {
+        "type": "java",
+        "name": "ShopFlowProServiceApplication",
+        "request": "launch",
+        "mainClass": "com.wsu.shopflowproservice.ShopFlowProServiceApplication",
+        "projectName": "ShopFlowPro-service",
+        "args": "",
+        "env": {
+          "SERVER_PORT": "8080",
+          "SERVER_CONTEXT_PATH": "/shop-flow-pro-service",
+          "DATABASE_URL": "jdbc:mariadb://host.docker.internal:3306/shop_flow_pro",
+          "DATABASE_USERNAME": "user",
+          "DATABASE_PASSWORD": "password",
+          "DATABASE_DRIVER": "org.mariadb.jdbc.Driver"
+      }
+    },
+    ]
+  }

@@ -1,0 +1,82 @@
+<div class="create-service-order">
+  <div class="content">
+    <h2>Create New Service Order</h2>
+    <form [formGroup]="serviceOrderForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="customerFirstName">Customer First Name</label>
+        <input 
+          id="customerFirstName" 
+          formControlName="customerFirstName" 
+          placeholder="Enter customer's first name" 
+          class="form-control">
+        <div *ngIf="serviceOrderForm.get('customerFirstName')?.touched && serviceOrderForm.get('customerFirstName')?.invalid">
+          <small class="error-text">First Name is required</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="customerLastName">Customer Last Name</label>
+        <input 
+          id="customerLastName" 
+          formControlName="customerLastName" 
+          placeholder="Enter customer's last name" 
+          class="form-control">
+        <div *ngIf="serviceOrderForm.get('customerLastName')?.touched && serviceOrderForm.get('customerLastName')?.invalid">
+          <small class="error-text">Last Name is required</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="vin">VIN</label>
+        <input 
+          id="vin" 
+          formControlName="vin" 
+          placeholder="Enter VIN number" 
+          class="form-control">
+        <div *ngIf="serviceOrderForm.get('vin')?.touched && serviceOrderForm.get('vin')?.invalid">
+          <small class="error-text" *ngIf="serviceOrderForm.get('vin')?.hasError('required')">VIN is required</small>
+          <small class="error-text" *ngIf="serviceOrderForm.get('vin')?.hasError('pattern')">VIN format is invalid</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="serviceId">Service ID</label>
+        <input 
+          id="serviceId" 
+          formControlName="serviceId" 
+          placeholder="Enter service ID" 
+          class="form-control">
+        <div *ngIf="serviceOrderForm.get('serviceId')?.touched && serviceOrderForm.get('serviceId')?.invalid">
+          <small class="error-text">Service ID is required and must be a positive number</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="mechanicId">Mechanic ID</label>
+        <input 
+          id="mechanicId" 
+          formControlName="mechanicId" 
+          placeholder="Enter mechanic ID" 
+          class="form-control">
+        <div *ngIf="serviceOrderForm.get('mechanicId')?.touched && serviceOrderForm.get('mechanicId')?.invalid">
+          <small class="error-text">Mechanic ID is required and must be a positive number</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="totalCost">Total Cost</label>
+        <input 
+          id="totalCost" 
+          formControlName="totalCost" 
+          placeholder="Enter total cost" 
+          type="number"
+          class="form-control">
+        <div *ngIf="serviceOrderForm.get('totalCost')?.touched && serviceOrderForm.get('totalCost')?.invalid">
+          <small class="error-text">Total cost is required and must be a positive number</small>
+        </div>
+      </div>
+
+      <button type="submit" class="btn submit-btn" [disabled]="!serviceOrderForm.valid">Create Order</button>
+    </form>
+  </div>
+</div>
